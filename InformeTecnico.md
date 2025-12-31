@@ -36,8 +36,18 @@
 ## 5. Fabricación
 
 ## 6. Programación
+Hemos dividido el código arduino en 3 ficheros:
+- Control.h: Constantes y librerías necesarias para la implementación del control remoto. De esta forma, basta con importar este archivo para poder ejecutar diferentes acciones dependiendo del botón pulsado.
+- Spider.h: Clase que implementa las funcionalidades básicas del robot (move, turn, head_set_to, set_speed, get_dist). De esta forma tenemos el control del robot modulado y sus constantes (pines, umbrales) separadas del código principal).
+- Spider.ino: Código principal del robot. Usa los archivos anteriores para completar el problema propuesto. Problemas específicos como seguir la pared o comprobar si hay un obstáculo, se modulan mediante métodos (follow_wall, is_obstacle). Usando estas funciones y mediante una máquina de estados, somos capaces de resolver el ejercicio propuesto. Somos capaces de cambiar entre ejercicios usando el control remoto previamente mencionado (cambia la variable de estado). Hemos evitado en la medida de lo posible utilizar delays, con el fin de hacer el programa lo más reactivo posible.
+
+- Métodos del código principal:
+  - follow_wall: Inicialmente pensamos en utilizar un PID, pero lo simplificamos a un código de error simple para no tener que aplicar diferentes velocidades a los motores.
+  - is_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
 
 ## 7. Pruebas y validación
+[video]
+[video]
 
 ## 8. Resultados
 
