@@ -33,9 +33,30 @@
 
 ## 4. Diseño mecánico y electrónico
 
+### 4.1 Diseño mecánico
+
+### 4.2 Diseño electrónico
+
+Para el control del robot se ha diseñado un PCB personalizado que actúa como escudo (shield) para el Arduino UNO. El diseño se ha realizado íntegramente en KiCad 9.0.6.
+
+- Esquema Lógico: Se ha implementado un sistema que interconecta el microcontrolador con un driver de motores TB6612FNG, permitiendo el control independiente de los dos motores DC que accionan el mecanismo de Jansen.
+
+- Gestión de Sensores: El diseño incluye puertos dedicados para tres sensores de ultrasonidos (frontal, izquierdo y derecho) y un microservo para la detección de obstáculos.
+
+- Alimentación: El circuito integra una entrada de batería (V_BATT).
+
+### 4.3 Diseño de la Placa de Circuito Impreso (PCB)
+
+Una vez establecida la posición de los componentes, se procedió a la creación de las pistas de cobre siguiendo las guías de conexión del esquema:
+
+- Ruteado Manual: Se han trazado todas las conexiones eléctricas utilizando pistas de cobre. Se ha priorizado evitar cruces de señales y mantener ángulos de 45° para asegurar la integridad de la fabricación.
+
+- Verificación DRC: Se ha pasado el control de reglas de diseño (Design Rules Check) de KiCad, confirmando que no existen cortocircuitos ni pistas demasiado cercanas que impidan la fabricación.
+
 ## 5. Fabricación
 
 ## 6. Programación
+
 Hemos dividido el código arduino en 3 ficheros:
 - Control.h: Constantes y librerías necesarias para la implementación del control remoto. De esta forma, basta con importar este archivo para poder ejecutar diferentes acciones dependiendo del botón pulsado.
 - Spider.h: Clase que implementa las funcionalidades básicas del robot (move, turn, head_set_to, set_speed, get_dist). De esta forma tenemos el control del robot modulado y sus constantes (pines, umbrales) separadas del código principal).
@@ -46,6 +67,7 @@ Hemos dividido el código arduino en 3 ficheros:
   - is_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
 
 ## 7. Pruebas y validación
+
 [video]
 [video]
 
