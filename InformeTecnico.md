@@ -53,7 +53,23 @@ Una vez establecida la posición de los componentes, se procedió a la creación
 
 - Verificación DRC: Se ha pasado el control de reglas de diseño (Design Rules Check) de KiCad, confirmando que no existen cortocircuitos ni pistas demasiado cercanas que impidan la fabricación.
 
+![Esquema del circuito electrónico](Imagenes/esquema_pcb.png)
+
 ## 5. Fabricación
+
+Aqui pon la fabricacion del robot como tal, supongo que el tema de impresion 3d y demas
+
+### 5.2 Planteamiento y Preparación para la Fabricación del PCB
+
+Aunque la validación final del prototipo se realizó mediante métodos de cableado físico y prototipado rápido, se ha completado toda la fase de ingeniería necesaria para su producción industrial:
+
+- Generación de Archivos Gerber: Se ha procesado el diseño para obtener los archivos industriales estándar (formato RS-274X). Estos archivos contienen la información de las capas de cobre, máscara de soldadura y serigrafía necesaria para cualquier servicio de fabricación de PCB. [Ver carpeta](SpiderBot_KICAD/gerbers_spider)
+
+- Escalabilidad: El diseño queda listo para una fase de producción en masa, lo que permitiría eliminar el cableado manual actual, reduciendo el peso total del robot y aumentando la fiabilidad ante las vibraciones del mecanismo Jansen.
+
+- Validación de Montaje (3D): Se ha utilizado el motor de renderizado 3D de KiCad para verificar que la disposición de los componentes físicos (como el driver TB6612FNG y los sensores) no presenta interferencias mecánicas con el chasis del robot.
+
+  ![Imagen 3d del PCB](Imagenes/pcb_3d.png)
 
 ## 6. Programación
 
