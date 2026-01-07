@@ -63,7 +63,8 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) tenemos los modelos 3D de todas las p
 Primero necesitabamos ensanchar el cuerpo del robot para que los elementos necesarios quepan en él. Por lo tanto ensanchamos [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl). Hemos modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para que soporten una altura más, [PlantaArriba](FreeCad_Stls/Arriba.stl), de la misma forma que soportan las otras dos alturas. Esta planta superior sirve para dos cosas fundamentales: soportar la caja [Caja](FreeCad_Stls/Caja.stl) que llevará la carga pedida, y soportar el servo que cargará con la caja contenedora del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
 En la imagen posterior tenemos una captura de pantalla de FreeCad de nuestras piezas centrales (cuerpo) ancladas como deberían ser fuera de la simulación.
-!(foto_all)[Imagenes/All.png]
+
+![foto_all](Imagenes/All.png)
 
 ### 5.2 Planteamiento y Preparación para la Fabricación del PCB
 
