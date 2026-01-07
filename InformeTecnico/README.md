@@ -62,6 +62,9 @@ Nuestro robot está inspirado en... [citar el robot ese]
 En la carpeta [FreeCad_stls](FreeCad_Stls) tenemos los modelos 3D de todas las piezas. Respecto al original, hemos adaptado a nuestro problema las piezas centrales.
 Primero necesitabamos ensanchar el cuerpo del robot para que los elementos necesarios quepan en él. Por lo tanto ensanchamos [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl). Hemos modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para que soporten una altura más, [PlantaArriba](FreeCad_Stls/Arriba.stl), de la misma forma que soportan las otras dos alturas. Esta planta superior sirve para dos cosas fundamentales: soportar la caja [Caja](FreeCad_Stls/Caja.stl) que llevará la carga pedida, y soportar el servo que cargará con la caja contenedora del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
+En la imagen posterior tenemos una captura de pantalla de FreeCad de nuestras piezas centrales (cuerpo) ancladas como deberían ser fuera de la simulación.
+!(foto_all)[Imagenes/All.png]
+
 ### 5.2 Planteamiento y Preparación para la Fabricación del PCB
 
 Aunque la validación final del prototipo se realizó mediante métodos de cableado físico y prototipado rápido, se ha completado toda la fase de ingeniería necesaria para su producción industrial:
@@ -82,7 +85,7 @@ Hemos dividido el código arduino en 3 ficheros:
 - Spider.ino: Código principal del robot. Usa los archivos anteriores para completar el problema propuesto. Problemas específicos como seguir la pared o comprobar si hay un obstáculo, se modulan mediante métodos (follow_wall, is_obstacle). Usando estas funciones y mediante una máquina de estados, somos capaces de resolver el ejercicio propuesto. Somos capaces de cambiar entre ejercicios usando el control remoto previamente mencionado (cambia la variable de estado). Hemos evitado en la medida de lo posible utilizar delays, con el fin de hacer el programa lo más reactivo posible.
 
 - Métodos del código principal:
-  - follow_wall: Inicialmente pensamos en utilizar un PID, pero lo simplificamos a un código de error simple para no tener que aplicar diferentes velocidades a los motores.
+  - follow_wall: Utilizamos un PD para seguir la pared, usando la distancia recogida por el ultrasonidos lateral correspondiente como error comprandolo con una distancia arbitraria.
   - is_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
 
 ## 7. Pruebas y validación
