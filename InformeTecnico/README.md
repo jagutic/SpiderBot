@@ -53,7 +53,9 @@ Una vez establecida la posición de los componentes, se procedió a la creación
 
 - Verificación DRC: Se ha pasado el control de reglas de diseño (Design Rules Check) de KiCad, confirmando que no existen cortocircuitos ni pistas demasiado cercanas que impidan la fabricación.
 
-![Esquema del circuito electrónico](Imagenes/esquema_pcb.png)
+<p align="center">
+<img src="Imagenes/esquema_pcb.png" width="600">
+</p>
 
 ## 5. Fabricación
 
@@ -62,9 +64,12 @@ Nuestro robot está inspirado en... [citar el robot ese]
 En la carpeta [FreeCad_stls](FreeCad_Stls) tenemos los modelos 3D de todas las piezas. Respecto al original, hemos adaptado a nuestro problema las piezas centrales.
 Primero necesitabamos ensanchar el cuerpo del robot para que los elementos necesarios quepan en él. Por lo tanto ensanchamos [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl). Hemos modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para que soporten una altura más, [PlantaArriba](FreeCad_Stls/Arriba.stl), de la misma forma que soportan las otras dos alturas. Esta planta superior sirve para dos cosas fundamentales: soportar la caja [Caja](FreeCad_Stls/Caja.stl) que llevará la carga pedida, y soportar el servo que cargará con la caja contenedora del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
-En la imagen posterior tenemos una captura de pantalla de FreeCad de nuestras piezas centrales (cuerpo) ancladas como deberían ser fuera de la simulación.
+En las imagenes posteriores mostramos en FreeCad nuestras piezas centrales (cuerpo) ancladas como deberían ser fuera de la simulación.
 
-![foto_all](Imagenes/All.png)
+<p align="center">
+<img src="Imagenes/atras.png" width="300">
+<img src="Imagenes/delante.png" width="300">
+</p>
 
 ### 5.2 Planteamiento y Preparación para la Fabricación del PCB
 
@@ -76,7 +81,9 @@ Aunque la validación final del prototipo se realizó mediante métodos de cable
 
 - Validación de Montaje (3D): Se ha utilizado el motor de renderizado 3D de KiCad para verificar que la disposición de los componentes físicos (como el driver TB6612FNG y los sensores) no presenta interferencias mecánicas con el chasis del robot.
 
-  ![Imagen 3d del PCB](Imagenes/pcb_3d.png)
+<p align="center">
+<img src="Imagenes/pcb_3d.png" width="600">
+</p>
 
 ## 6. Programación
 
