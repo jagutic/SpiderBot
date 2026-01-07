@@ -9,7 +9,6 @@
 - [6. Programación](#6-programación)
 - [7. Pruebas y validación](#7-pruebas-y-validación)
 - [8. Resultados](#8-resultados)
-- [9. Conclusiones](#conclusiones)
 - [Referencias](#referencias)
 
 ## 1. Introducción
@@ -30,6 +29,9 @@
 ## 2. Objetivos y planificación
 
 ## 3. Diseño conceptual
+Este proyecto está inspirado en el diseño original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html).
+
+Hemos empleado la cinématica de este proyecto basada en el mecanismo de Theo Jansen, facilitandonos así el movimiento con solo dos motores (uno para cada set de patas). Respecto al cuerpo del robot, lo hemos modificado con el fin de resolver el problema propuesto. En el apartado [5. Fabricación](#5-fabricación) exponemos en detalle estos cambios.
 
 ## 4. Diseño mecánico y electrónico
 
@@ -59,12 +61,13 @@ Una vez establecida la posición de los componentes, se procedió a la creación
 
 ## 5. Fabricación
 
-Nuestro robot está inspirado en... [citar el robot ese]
-
 En la carpeta [FreeCad_stls](FreeCad_Stls) tenemos los modelos 3D de todas las piezas. Respecto al original, hemos adaptado a nuestro problema las piezas centrales.
-Primero necesitabamos ensanchar el cuerpo del robot para que los elementos necesarios quepan en él. Por lo tanto ensanchamos [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl). Hemos modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para que soporten una altura más, [PlantaArriba](FreeCad_Stls/Arriba.stl), de la misma forma que soportan las otras dos alturas. Esta planta superior sirve para dos cosas fundamentales: soportar la caja [Caja](FreeCad_Stls/Caja.stl) que llevará la carga pedida, y soportar el servo que cargará con la caja contenedora del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
-En las imagenes posteriores mostramos en FreeCad nuestras piezas centrales (cuerpo) ancladas como deberían ser fuera de la simulación.
+- Primero necesitabamos agrandar el cuerpo del robot para que los elementos necesarios quepan en él. Por lo tanto ensanchamos [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl).
+- Hemos modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para que soporten una altura más, [PlantaArriba](FreeCad_Stls/Arriba.stl), de la misma forma que soportan las otras dos alturas.
+- Esta planta superior sirve para dos cosas fundamentales: soportar la caja [Caja](FreeCad_Stls/Caja.stl) que llevará la carga pedida, y llevar el servo que irá enganchado a la caja contenedora del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
+
+En las imagenes posteriores mostramos en FreeCad nuestras piezas centrales (cuerpo) ancladas.
 
 <p align="center">
 <img src="Imagenes/atras.png" width="300">
@@ -94,15 +97,16 @@ Hemos dividido el código arduino en 3 ficheros:
 
 - Métodos del código principal:
   - follow_wall: Utilizamos un PD para seguir la pared, usando la distancia recogida por el ultrasonidos lateral correspondiente como error comprandolo con una distancia arbitraria.
-  - is_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
+  - confirm_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
+  - avoid_obstacle: 
 
 ## 7. Pruebas y validación
-
+Simulación usu
 [video]
 [video]
 
 ## 8. Resultados
-
-## 9. Conclusiones
+[videos supongo]
 
 ## Referencias
+Kilic, M. (2024). Build a Walking Robot Theo Jansen Style 3D Printed Octopod [Proyecto de Hardware Open Source]. PCBWay Community. https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html
