@@ -32,12 +32,12 @@ El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interf
 
 
 <p align="center">
-<img src="Imagenes/IR_Remote_Control" width="600">
+<img src="Imagenes/IR_Remote_Control.png" width="600">
 </p>
 
 
 <p align="center">
-<img src="Imagenes/Remote_control" width="600">
+<img src="Imagenes/Remote_control.png" width="600">
 </p>
 
 ## 4. Preguntas Frecuentes
