@@ -24,9 +24,13 @@ El Spider-Bot es un octópodo diseñado bajo los principios cinemáticos de Theo
 
 3. Carga: Si vas a transportar el peso de 250g, asegúrate de colocarlo en el centro de la caja colocada en el superior del chasis para no forzar los motores de un solo lado.
 
+4. Vinculación: Usa el mando para iniciar alguno de los modos de funcionamiento.
+
 ## 3. Modos de Funcionamiento
 
-FALTAAAAAAAAA
+El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interfaz está dividida en funciones de Control Directo y Protocolos Autónomos.
+
+imagennnnn
 
 ## 4. Preguntas Frecuentes
 
