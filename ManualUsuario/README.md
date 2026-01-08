@@ -2,10 +2,9 @@
 
 ## Índice
 - [1. Introducción](#1-introducción)
-- [2. Instrucciones de Uso y Puesta en Marcha](#2-instrucciones-de-uso-y-puesta-en-marcha)
+- [2. Primeros Pasos](#2-primeros-pasos)
 - [3. Modos de Funcionamiento](#3-modos-de-funcionamiento)
-- [4. Mantenimiento y Cuidados](#4-mantenimiento-y-cuidados)
-- [5. Resolución de Problemas](#5-resolución-de-problemas)
+- [4. Preguntas Frecuentes](#4-preguntas-frecuentes)
 
 ## 1. Introducción
 
@@ -17,7 +16,7 @@ El Spider-Bot es un octópodo diseñado bajo los principios cinemáticos de Theo
 
 - Control: Sistema autónomo con triple sensor ultrasónico y control remoto IR.
 
-## 2. Instrucciones de Uso y Puesta en Marcha
+## 2. Primeros Pasos
 
 1. Colocación: Sitúa el robot en una superficie lisa. Evita alfombras que puedan atascarse en las articulaciones de las patas.
 
@@ -29,15 +28,7 @@ El Spider-Bot es un octópodo diseñado bajo los principios cinemáticos de Theo
 
 FALTAAAAAAAAA
 
-## 4. Mantenimiento y Cuidados
-
-El mecanismo de Theo Jansen tiene muchos puntos de fricción:
-
-- Lubricación: Aplica una gota de lubricante seco en las articulaciones de las 8 patas si notas que el motor hace un ruido excesivo.
-
-- Limpieza: Revisa que no haya pelos o polvo en los ejes de las levas, ya que esto podría frenar el movimiento circular.
-
-## 5. Resolución de Problemas
+## 4. Preguntas Frecuentes
 
 - ¿Por qué el robot se mueve pero no avanza (se queda en el sitio)?
     - Respuesta: Comprueba que el suelo no sea demasiado resbaladizo (como cristal o parqué muy pulido). Las patas del Octopod necesitan un poco de agarre para que el mecanismo de Jansen empuje el cuerpo hacia adelante.
@@ -57,7 +48,7 @@ El mecanismo de Theo Jansen tiene muchos puntos de fricción:
 - ¿Cómo sé si se le ha acabado la pila?
     - Respuesta: Notarás que el robot camina muy despacio, que los sensores fallan o que se reinicia solo. Es hora de cargar la batería.
 
-`Si ves que sale humo o huele a quemado, desconecta el cable rojo de la batería inmediatamente!!!`
+`Si ves que sale humo o huele a quemado, desconecta el cable de la batería inmediatamente!!!`
 
 
 
