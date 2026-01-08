@@ -38,14 +38,21 @@ Kit Arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 mi
 ### 2.1 Modelado
 En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos 3D de todas las piezas. Respecto al diseño original, se han adaptado las piezas centrales para adecuarlas al problema actual:
 
-- Se requiere aumentar el cuerpo del robot para alojar los elementos necesarios. Por ello, se procede al ensanchamiento de [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl).
-- Se han modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para soportar un nivel adicional, la [PlantaArriba](FreeCad_Stls/Arriba.stl), siguiendo el sistema de anclaje de los niveles inferiores.
-- Esta planta superior cumple dos funciones fundamentales: soportar la [Caja](FreeCad_Stls/Caja.stl) de transporte de carga y alojar el servo conectado al contenedor del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
+- Se requiere aumentar el cuerpo del robot para alojar los elementos necesarios. Por ello, se procede al ensanchamiento de [BaseBaja](FreeCad_Stls/Abajo.stl) y [BaseMedia](FreeCad_Stls/Medio.stl).
+- Se han modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para soportar un nivel adicional, la [BaseArriba](FreeCad_Stls/Arriba.stl), siguiendo el sistema de anclaje de los niveles inferiores.
+- Esta Base superior cumple dos funciones fundamentales: soportar la [Caja](FreeCad_Stls/Caja.stl) de transporte de carga y alojar el servo conectado al contenedor del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
 
 ### 2.2 Simulación
 La parte de la simulación se realizó para tener una referencia real antes de imprimir para confirmar que el movimiento era correcto.
-Inicialmente se hizo un modelo URDF, este modelo es lo más realista posible pero, como podemos ver en el robot, necesita de joints dobles para que se muevan las patas, y eso no se permite en el formato URDF, para crearlo he usado la herramienta de blender con la extensión de phobos. Debido al problema del URDF, la programación en la simulación es mas compleja ya que tenemos que usar una herramienta de pybullet llamada constrain, cuya función es juntar dos piezas como un joint, esto causa que las fuerzas que puedan aparecer en gráficas no sean realistas ya que estos constrains intentan siempre estar en el sitio pero como en URDF están colgando añaden mucha dificultad a los motores para girar, cuando en la realidad no es así.
+
+El desarrollo del modelo en formato **URDF** presenta una limitación crítica: este estándar está diseñado para estructuras jerárquicas (árboles) y no permite de forma nativa la creación de **joints dobles** o bucles cinemáticos cerrados. Dado que el mecanismo de las patas requiere este tipo de conexiones para funcionar, el formato URDF impide representar la interdependencia mecánica real del robot de forma directa.
+
+Para solventar esta restricción y lograr una simulación funcional, se ha seguido este procedimiento:
+
+* **Generación del modelo:** Se ha utilizado **Blender** con la extensión **Phobos** para crear una estructura compatible que pueda ser exportada y procesada.
+* **Implementación de Constraints:** En el entorno de **PyBullet**, se ha empleado la herramienta `constraint` para vincular físicamente las piezas. Su función es emular el comportamiento de un *joint* de cierre, permitiendo que las patas se muevan de forma sincronizada.
+* **Análisis de resultados:** Es necesario señalar que el uso de estos *constraints* introduce fuerzas artificiales en las gráficas de la simulación. Al intentar mantener la cohesión de elementos que estructuralmente están "colgando" en el URDF, se genera una carga adicional en los motores que no corresponde con el comportamiento del modelo físico real, donde el movimiento es más fluido.
 
 <p align="center">
   <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAQ0JiPpnNPSoRYu0Z7_MFoAWkj1z3xnT09Al3eBEj2Tbc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=mgvvG1">
@@ -95,21 +102,28 @@ Aunque la validación final del prototipo se realizó mediante cableado físico 
 
 ## 4. Fabricación
 
+Con los modelos stl, se puede proceder a la fabricación de la estructura con una impresora 3D utilizando los filamentos indicados. (Algunas piezas necesitaron ser limadas por errores comunes de impresión)
+
 Materiales:
 * Filamentos PLA+ de 1.75mm con precisión de +- 0.02 mm
 
-Con los modelos stl, se puede proceder a la fabricación de la estructura con una impresora 3D utilizando los filamentos indicados. (Algunas piezas necesitaron ser limadas por errores comunes de impresión)
 
 ### 4.1 Montaje
 
-Materiales:
-* Tornillos para las plantas.
-* Tornillos para las patas.
-* Tornillo para la caja.
-* Tornillos para el servo.
-* velcros
-
 Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante los tornillos especificados. En las imágenes posteriores se muestran las piezas del cuerpo con su correspondiente dispoisición.
+
+Materiales:
+* x12 Tornillos M3 12 mm
+* x2 Tornillo M3 10 mm
+* x2 Tornillo M3 15 mm
+* x2 Tornillo M3 20 mm
+* x4 Tornillo M3 25 mm
+* x4 Tuercas M3
+* x1 Tornillo M5 10 mm
+* x1 Tuerca M5
+* x2 Tornillo M2 8 mm
+* x1 Tornillo M1 5 mm
+* Bridas de velcro
 
 
 <p align="center">
@@ -117,24 +131,24 @@ Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante
 <img src="Imagenes/delante.png" width="300">
 </p>
 
-- Se atornillan las 3 plantas con los laterales utilizando los tornillos ... .
+- Se atornillan las 3 Bases con los laterales utilizando los tornillos M3 10 mm.
 
-- La caja se atornilla con un tornillo ... y su tuerca correspondiente para asegurarla.
+- La caja se atornilla con un tornillo M5 10 mm y su tuerca correspondiente para asegurarla.
 
 
 <p align="center">
-<img src="Imagenes/frente.jpeg" width="200">
-<img src="Imagenes/ladeado.jpeg" width="200">
-<img src="Imagenes/atras.jpeg" width="200">
+<img src="Imagenes/frente.jpeg" width="300">
+<img src="Imagenes/ladeado.jpeg" width="300">
+<img src="Imagenes/atras.jpeg" width="300">
 </p>
 
-- Los motores van atornillados con los ... en la planta inferior, dejando uno de sus ejes sobresaliendo por el lateral para conectar los conjuntos de patas.
+- Los motores van atornillados con los M3 25 mm y sus tuercas en la Base inferior, dejando uno de sus ejes sobresaliendo por el lateral para conectar los conjuntos de patas.
 
-- El servo se coloca en el espacio dispuesto para él en la parte frontal del robot.
+- El servo se coloca en el espacio dispuesto para él en la parte frontal del robot, atornillado con los M2 8 mm.
 
-- El ultrasonidos central va dentro de su caja y tapa correspondiente [CajaUS](FreeCad_Stls/CajaUS.stl), y esta caja conectada al servo para que gire verticalmente.
+- El ultrasonidos central va dentro de su caja y tapa correspondiente [CajaUS](FreeCad_Stls/CajaUS.stl), y esta caja conectada con el tornillo M1 5 mm al servo para que gire verticalmente.
 
-- Para terminar el cuerpo se colocan: la batería, el microcontrolador, la miniprotoboard el puente H y los 2 ultrasonidos laterales con velcros. Con esto es suficiente a su sujección y facilita mucho el montaje.
+- Para terminar el cuerpo se colocan: la batería, el microcontrolador, la miniprotoboard el puente H y los 2 ultrasonidos laterales con las bridas de velcro. Con esto es suficiente a su sujección y facilita mucho el montaje.
 
 <p align="center">
   <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAkpS834dYtR46muISWnDt4AQrMFmQSmGmuzW9HST6vcxA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gBbYqR">
@@ -146,7 +160,7 @@ Por último, arriba se incluye un videotutorial para el montaje de las patas, la
 
 
 ### 4.2 Circuito
-
+FRIZTING!!!!!
 [alguien porfa ayuda]
 
 
@@ -171,7 +185,7 @@ Prueba del caso 2, tocando las 4 paredes mientras esquiva obstáculos. No lleva 
 
 <p align="center">
   <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQCe-WwKy5C2QJIU49QHiDK6AS2-BWRqhCDQ_IA38Tgm0co?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hneQIs">
-    <img src="Imagenes/prueba1.png" width="200" alt=p1">
+    <img src="Imagenes/prueba1.png" width="250" alt=p1">
   </a>
   <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQDGhoABG6wNQ4XgmfqWrPcEAZKKj-teWtL4Eo63Ohf5PM8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vWhUpM">
     <img src="Imagenes/prueba2.png" width="400" alt=p2">
@@ -186,4 +200,5 @@ Prueba del caso 2, tocando las 4 paredes mientras esquiva obstáculos. No lleva 
 
 ## Referencias
 Kilic, M. (2024). Build a Walking Robot Theo Jansen Style 3D Printed Octopod [Proyecto de Hardware Open Source]. PCBWay Community. https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html
+
 N_O_A_H. (2020). *Case for HC-SR04 ultrasonic module distance sensor for Arduino Raspberry Pi* [Modelo 3D]. Cults3D. https://cults3d.com/en/3d-model/gadget/case-for-hc-sr04-ultrasonic-module-distance-sensor-for-arduino-raspberry-pi
