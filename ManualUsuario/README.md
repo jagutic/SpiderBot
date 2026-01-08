@@ -30,7 +30,10 @@ El Spider-Bot es un octópodo diseñado bajo los principios cinemáticos de Theo
 
 El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interfaz está dividida en funciones de Control Directo y Protocolos Autónomos.
 
-imagennnnn
+
+<p align="center">
+<img src="Imagenes/IR_Remote_Control" width="600">
+</p>
 
 ## 4. Preguntas Frecuentes
 
