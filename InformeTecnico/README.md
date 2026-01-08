@@ -2,42 +2,42 @@
 
 ## Índice
 - [1. Introducción](#1-introducción)
-- [2. Objetivos y planificación](#2-objetivos-y-planificación)
-- [3. Diseño conceptual](#3-diseño-conceptual)
-- [4. Diseño mecánico y electrónico](#4-diseño-mecánico-y-electrónico)
-- [5. Fabricación](#5-fabricación)
-- [6. Programación](#6-programación)
-- [7. Pruebas y validación](#7-pruebas-y-validación)
-- [8. Resultados](#8-resultados)
+- [2. Diseño conceptual](#2-diseño-conceptual)
+- [3. Diseño mecánico y electrónico](#3-diseño-mecánico-y-electrónico)
+- [4. Fabricación](#4-fabricación)
+- [5. Programación](#5-programación)
+- [6. Pruebas y validación](#6-pruebas-y-validación)
+- [7. Resultados](#7-resultados)
 - [Referencias](#referencias)
 
 ## 1. Introducción
-- 1.1 Contexto y Motivación:
+- 1.1 Contexto y Preparación:
 
     Se nos pide hacer un robot capaz de moverse en un espacio reducido. Este debe transoportar una carga (250g) mientras esquiva obstáculos y llega a su objetivo lo antes podible. El robot debe tener obligatoriamente patas (8 en nuestro caso).
 
-    Nos hemos inspirado en el robot [hola] que utiliza el mecanismo de Theo Jansen para mover las patas únicamente usando un motor (movimiento circular). Ovbiamente nos hemos inspirado también en un araña para hacer el diseño del robot, de ahí sus colores y símbolos típicos del famoso hombre-araña. 
+    Nos hemos inspirado en inspirado en el diseño original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html). Lo hemos adaptado para que resuelva el problema propuesto. En el apartado [5. Fabricación](#5-fabricación) exponemos en detalle estos cambios.
+  
 
 - 1.2 Descripción General del Proyecto:
 
     Una "araña" robótica con locomoción a través del mecanismo Jansen, diseñada para el transporte de cargas ligeras en un entorno con obstáculos y paredes.
+    Estructura impresa en 3D, previamente modelada en freeCAD. Programado en aruino y con posibilidad de movimiento por control remoto.
 
-    Estructura impresa en 3D, previamente modelada en freeCAD
-  Kit arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 [PCB].
+    Kit arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 [PCB], 1 control - receptor IR.
 
-  
-## 2. Objetivos y planificación
 
-## 3. Diseño conceptual
-Este proyecto está inspirado en el diseño original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html).
+## 2. Diseño conceptual
+Hemos elegido el microcontrolador arduino UNO por nuestra previa experiencia con él.
 
-Hemos empleado la cinématica de este proyecto basada en el mecanismo de Theo Jansen, facilitandonos así el movimiento con solo dos motores (uno para cada set de patas). Respecto al cuerpo del robot, lo hemos modificado con el fin de resolver el problema propuesto. En el apartado [5. Fabricación](#5-fabricación) exponemos en detalle estos cambios.
+Estéticamente, debido a sus 8 patos y estilo arácnido, nuestro proyecto está obviamente inspirado en el famoso superhéroe Spider-man, teniendo detalles y colores de este. Esto lo hace un robot más llamativo y amigable con el usuario.
 
-## 4. Diseño mecánico y electrónico
+## 3. Diseño mecánico y electrónico
 
-### 4.1 Diseño mecánico
+### 3.1 Diseño mecánico
 
-### 4.2 Diseño electrónico
+Hemos empleado la cinématica de este proyecto basada en el mecanismo de Theo Jansen, facilitandonos así el movimiento con solo dos motores (uno para cada set de patas).
+
+### 3.2 Diseño electrónico
 
 Para el control del robot se ha diseñado un PCB personalizado que actúa como escudo (shield) para el Arduino UNO. El diseño se ha realizado íntegramente en KiCad 9.0.6.
 
@@ -47,7 +47,7 @@ Para el control del robot se ha diseñado un PCB personalizado que actúa como e
 
 - Alimentación: El circuito integra una entrada de batería (V_BATT).
 
-### 4.3 Diseño de la Placa de Circuito Impreso (PCB)
+### 3.3 Diseño de la Placa de Circuito Impreso (PCB)
 
 Una vez establecida la posición de los componentes, se procedió a la creación de las pistas de cobre siguiendo las guías de conexión del esquema:
 
@@ -59,7 +59,7 @@ Una vez establecida la posición de los componentes, se procedió a la creación
 <img src="Imagenes/esquema_pcb.png" width="600">
 </p>
 
-## 5. Fabricación
+## 4. Fabricación
 
 En la carpeta [FreeCad_stls](FreeCad_Stls) tenemos los modelos 3D de todas las piezas. Respecto al original, hemos adaptado a nuestro problema las piezas centrales.
 
@@ -74,7 +74,15 @@ En las imagenes posteriores mostramos en FreeCad nuestras piezas centrales (cuer
 <img src="Imagenes/delante.png" width="300">
 </p>
 
-### 5.2 Planteamiento y Preparación para la Fabricación del PCB
+Una vez modeladas todas las piezas y mediante una impresora 3D, fabricamos todas las piezas necesarias. Estas se unen mediante difefrentes tornillos especificados abajo. Además incluimos un video tutorial para el montaje de las patas que irán conetadas a los motores sobresalientes del cuerpo.
+
+tornillos para las plantas
+tornillos para las patas
+tornillo para la caja
+tornillos para el servo
+[video montaje patas]
+
+### 4.1 Planteamiento y Preparación para la Fabricación del PCB
 
 Aunque la validación final del prototipo se realizó mediante métodos de cableado físico y prototipado rápido, se ha completado toda la fase de ingeniería necesaria para su producción industrial:
 
@@ -88,7 +96,7 @@ Aunque la validación final del prototipo se realizó mediante métodos de cable
 <img src="Imagenes/pcb_3d.png" width="600">
 </p>
 
-## 6. Programación
+## 5. Programación
 
 Hemos dividido el código arduino en 3 ficheros:
 - Control.h: Constantes y librerías necesarias para la implementación del control remoto. De esta forma, basta con importar este archivo para poder ejecutar diferentes acciones dependiendo del botón pulsado.
@@ -100,12 +108,12 @@ Hemos dividido el código arduino en 3 ficheros:
   - confirm_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
   - avoid_obstacle: 
 
-## 7. Pruebas y validación
+## 6. Pruebas y validación
 Simulación usu
 [video]
 [video]
 
-## 8. Resultados
+## 7. Resultados
 [videos supongo]
 
 ## Referencias
