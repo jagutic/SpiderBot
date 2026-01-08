@@ -24,7 +24,13 @@ Se requiere la creación de un robot capaz de desplazarse en espacios reducidos.
 
 ### 1.2 Elementos escogidos:
 
-Kit Arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 puente H, 1 control - receptor IR.
+x1 Kit Arduino UNO
+x2 motores de corriente continua
+x3 sensores ultrasónicos
+x1 microservo 9g
+x1 miniprotoboard
+x1 puente H
+x1 control - receptor IR.
 
 - Se ha seleccionado el **microcontrolador Arduino UNO** debido a la experiencia previa con la plataforma y su facilidad de programación. Los 2 sensores ultrasónicos laterales se destinan principalmente al seguimiento de paredes, funcionando también como apoyo en la evasión de obstáculos. El sensor ultrasónico central mide la distancia frontal y permite diferenciar entre una pared y un obstáculo en la trayectoria.
 
@@ -172,25 +178,43 @@ El código de Arduino se divide en 3 ficheros:
 - [Spider.h](Spider/Spider.h): Clase que implementa las funcionalidades básicas (move, turn, head_set_to, set_speed, get_dist). El control se encuentra modulado y las constantes (pines, umbrales) están separadas del flujo principal.
 - [Spider.ino](Spider/Spider.ino): Código principal. Utiliza los archivos anteriores para la resolución del problema. Funciones específicas como el seguimiento de pared o la comprobación de obstáculos se modulan mediante métodos (`follow_wall`, `is_obstacle`). A través de una máquina de estados se resuelven los ejercicios propuestos, permitiendo el cambio entre ellos mediante el control remoto. Se ha evitado el uso de `delays` para garantizar la máxima reactividad del programa.
 
-- **Métodos del código principal:**
+#### Métodos del código principal:
   - **follow_wall:** Se utiliza un control PD para el seguimiento de pared, empleando la distancia del sensor ultrasónico lateral como error respecto a una distancia de referencia.
+    
   - **confirm_obstacle:** Se basa en el principio de detección diferencial: si hay detección en el plano inferior pero no en el superior, se identifica un obstáculo. Dado que estos no superan los 10cm, dos mediciones del sensor (desplazado verticalmente por el servo) permiten diferenciar una pared de un objeto.
+    
   - **avoid_obstacle:** Esquive simple. Si gira 90º aprox., avanza hasta que deja de ver el obstáculo con el us lateral. Vuelve a girar 90º para continuar avanzando de manera normal. Durante su ejecución se sigue comprobando si hay obstáculos delante.
 
+
 ## 6. Pruebas
+Se puede cambiar entre los diferentes casos con el control remoto. Todos se pueden lograr llevando la carga requerida. Abajo hay una explicación de ellos y videos de prueba.
 
-Prueba del caso 1, siguiendo la pared. LLeva carga encima.
-Prueba del caso 2, tocando las 4 paredes mientras esquiva obstáculos. No lleva carga.
+- **Caso 0**: Manual. Movimiento básico del robot con el control remoto. (FORWARD, BACKWARD, TURN_LEFT, TURN_RIGHT)
+  
+- **Caso 1**: Seguir pared paralelamente con distnacia preventiva. Para esto se usa el método follow_wall únicamente.
+  
+- **Caso 2**: Tocar las 4 paredes esquivando obstáculos. Utiliza todos los métodos creados, cambiando de estado dependiendo de la situación. No tiene la necesidad de seguirlas paralelamente pero si no encuentra obstáculos lo hace.
 
-
-<p align="center">
-  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQCe-WwKy5C2QJIU49QHiDK6AS2-BWRqhCDQ_IA38Tgm0co?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hneQIs">
-    <img src="Imagenes/prueba1.png" width="250" alt=p1">
-  </a>
-  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQDGhoABG6wNQ4XgmfqWrPcEAZKKj-teWtL4Eo63Ohf5PM8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vWhUpM">
-    <img src="Imagenes/prueba2.png" width="400" alt=p2">
-  </a>
-</p>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>Prueba Caso 1: Con carga</b></td>
+      <td align="center"><b>Prueba Caso 2: Sin carga</b></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQCe-WwKy5C2QJIU49QHiDK6AS2-BWRqhCDQ_IA38Tgm0co?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hneQIs">
+          <img src="Imagenes/prueba1.png" width="250" alt="Prueba con carga">
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQDGhoABG6wNQ4XgmfqWrPcEAZKKj-teWtL4Eo63Ohf5PM8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vWhUpM">
+          <img src="Imagenes/prueba2.png" width="300" alt="Prueba sin carga">
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 
 ## 7. Resultados y conclusiones
