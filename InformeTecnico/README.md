@@ -137,9 +137,9 @@ Materiales:
 
 
 <p align="center">
-<img src="Imagenes/frente.jpeg" width="300">
-<img src="Imagenes/ladeado.jpeg" width="300">
-<img src="Imagenes/atras.jpeg" width="300">
+<img src="Imagenes/frente.jpeg" width="250">
+<img src="Imagenes/ladeado.jpeg" width="250">
+<img src="Imagenes/atras.jpeg" width="250">
 </p>
 
 - Los motores van atornillados con los M3 25 mm y sus tuercas en la Base inferior, dejando uno de sus ejes sobresaliendo por el lateral para conectar los conjuntos de patas.
