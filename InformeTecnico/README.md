@@ -1,13 +1,13 @@
 # Informe Técnico
 
 ## Índice
-- [1. Introducción](#1-introducción)
-- [2. Diseño conceptual](#2-diseño-conceptual)
-- [3. Diseño mecánico y electrónico](#3-diseño-mecánico-y-electrónico)
+- [1. Diseño conceptual](#1-diseño-conceptual)
+- [2. Diseño detallado](#2-diseño-detallado)
+- [3. Integración](#3-integración)
 - [4. Fabricación](#4-fabricación)
 - [5. Programación](#5-programación)
-- [6. Pruebas y validación](#6-pruebas-y-validación)
-- [7. Resultados](#7-resultados)
+- [6. Pruebas](#6-pruebas)
+- [7. Resultados y conclusiones](#7-resultados-y-conclusiones)
 - [Referencias](#referencias)
 
 ## 1. Diseño conceptual
@@ -15,28 +15,27 @@
   
 Se requiere la creación de un robot capaz de desplazarse en espacios reducidos. El dispositivo debe transportar una carga de 250g, esquivar obstáculos y alcanzar su objetivo con la mayor eficiencia temporal posible. Es obligatorio que el robot cuente con un sistema de locomoción por patas (8 unidades en este caso).
 
-La solución propuesta consiste en una "araña" robótica con locomoción basada en el mecanismo Jansen, diseñada para el transporte de cargas ligeras en entornos con obstáculos y paredes. La estructura se realiza mediante impresión 3D, previo modelado en FreeCAD. El control se ejecuta a través de Arduino, con opción de operación mediante control remoto.
+- La solución propuesta consiste en una "araña" robótica con locomoción basada en el mecanismo Jansen, diseñada para el transporte de cargas ligeras en entornos con obstáculos y paredes. La estructura se realiza mediante impresión 3D, previo modelado en FreeCAD. El control se ejecuta a través de Arduino, con opción de operación mediante control remoto.
 
-El diseño se basa en el modelo original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html), adaptándolo para resolver la problemática planteada. En el apartado [4. Fabricación](#4-fabricación) se exponen detalladamente estos cambios.
+- El diseño se basa en el modelo original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html), adaptándolo para resolver la problemática planteada. En el apartado [4. Fabricación](#4-fabricación) se exponen detalladamente estos cambios.
 
-El **mecanismo de Theo Jansen** permite el movimiento del robot empleando únicamente 2 motores. El movimiento circular se transfiere desde cada motor a las 4 patas de cada lateral. Es posible realizar movimientos de traslación (avance y retroceso) y rotación sobre el eje propio gracias al puente H, que permite programar los motores en Arduino para invertir el sentido de giro. Aquí se observa un ejemplo de su funcionamiento.
-
-[video theo jansen]
+- El **mecanismo de Theo Jansen** permite el movimiento del robot empleando únicamente 2 motores. El movimiento circular se transfiere desde cada motor a las 4 patas de cada lateral. Es posible realizar movimientos de traslación (avance y retroceso) y rotación sobre el eje propio gracias al puente H, que permite programar los motores en Arduino para invertir el sentido de giro. En el apartado de [2.2 Simulación](#22-simulación) podemos ver como funciona este mecanismo en nuestro robot simulado.
 
 
 ### 1.2 Elementos escogidos:
 
 Kit Arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 puente H, 1 control - receptor IR.
 
-Se ha seleccionado el **microcontrolador Arduino UNO** debido a la experiencia previa con la plataforma y su facilidad de programación. Los 2 sensores ultrasónicos laterales se destinan principalmente al seguimiento de paredes, funcionando también como apoyo en la evasión de obstáculos. El sensor ultrasónico central mide la distancia frontal y permite diferenciar entre una pared y un obstáculo en la trayectoria.
+- Se ha seleccionado el **microcontrolador Arduino UNO** debido a la experiencia previa con la plataforma y su facilidad de programación. Los 2 sensores ultrasónicos laterales se destinan principalmente al seguimiento de paredes, funcionando también como apoyo en la evasión de obstáculos. El sensor ultrasónico central mide la distancia frontal y permite diferenciar entre una pared y un obstáculo en la trayectoria.
 
-El **control remoto**, mediante la señal enviada al receptor IR, permite la conmutación de estados del robot para la resolución de los ejercicios propuestos. Se dispone, además, de un botón de parada de emergencia.
+- El **control remoto**, mediante la señal enviada al receptor IR, permite la conmutación de estados del robot para la resolución de los ejercicios propuestos. Se dispone, además, de un botón de parada de emergencia.
 
-En el aspecto estético, debido a la configuración de 8 patas y el estilo arácnido, el proyecto se inspira en el personaje Spider-man, incorporando detalles y colores representativos. Esto resulta en un robot más llamativo y con una interfaz visual amigable para el usuario.
+- En el aspecto estético, debido a la configuración de 8 patas y el estilo arácnido, el proyecto se inspira en el personaje Spider-man, incorporando detalles y colores representativos. Esto resulta en un robot más llamativo y con una interfaz visual amigable para el usuario.
 
 
 ## 2. Diseño detallado
 
+### 2.1 Modelado
 En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos 3D de todas las piezas. Respecto al diseño original, se han adaptado las piezas centrales para adecuarlas al problema actual:
 
 - Se requiere aumentar el cuerpo del robot para alojar los elementos necesarios. Por ello, se procede al ensanchamiento de [PlantaBaja](FreeCad_Stls/Abajo.stl) y [PlantaMedia](FreeCad_Stls/Medio.stl).
@@ -44,45 +43,10 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos
 - Esta planta superior cumple dos funciones fundamentales: soportar la [Caja](FreeCad_Stls/Caja.stl) de transporte de carga y alojar el servo conectado al contenedor del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
 
-### 2.1 Planos
-
 ### 2.2 Simulación
+[usu]
 
-## 3. Fabricación
-
-Materiales:
-* Filamentos PLA+ de 1.75mm con precisión de +- 0.02 mm
-
-Con los modelos stl, se puede proceder a la fabricación de la estructura con una impresora 3D utilizando los filamentos indicados. (Algunas piezas necesitaron ser limadas por errores comunes de impresión)
-
-
-### 3.1 Montaje
-
-Materiales:
-* Tornillos para las plantas.
-* Tornillos para las patas.
-* Tornillo para la caja.
-* Tornillos para el servo.
-* velcros
-
-Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante los tornillos especificados. En las imágenes posteriores se muestran las piezas del cuerpo con su correspondiente dispoisición. De esta forma se atornillan las 3 plantas con los laterales utilizando los tornillos ... . La caja se atornilla con un tornillo ... y su turca correspondiente para asegurarla. Por último los motores van atornillados con los ... en la planta inferior, dejando uno de sus ejes sobresaliendo por el lateral para conectar los conjuntos de patas.
-
-<p align="center">
-<img src="Imagenes/atras.png" width="300">
-<img src="Imagenes/delante.png" width="300">
-</p>
-
-El servo se coloca en el espacio dispuesto para él en la parte frontal del robot. El ultrasonidos central va dentro de su caja y tapa correspondiente [CajaUS](FreeCad_Stls/CajaUS.stl), y esta caja conectada al servo para que gire verticalmente.
-Para terminar el cuerpo se colocan: la batería, el microcontrolador, la miniprotoboard y los 2 ultrasonidos laterales con velcros. Con esto es suficiente a su sujección y facilita mucho el montaje.
-[fotos robot]
-
-Por último se incluye un videotutorial para el montaje de las patas, las cuales deben conectarse a los ejes de los motores que sobresalen del chasis.
-[video montaje patas]
-
-
-
-
-### 3.2 Diseño electrónico
+### 2.3 Diseño electrónico
 
 Para el control del robot se ha diseñado un PCB personalizado que actúa como shield para el Arduino UNO. El diseño se ha realizado íntegramente en KiCad 9.0.6.
 
@@ -93,7 +57,7 @@ Para el control del robot se ha diseñado un PCB personalizado que actúa como s
 - **Alimentación:** El circuito integra una entrada de batería (V_BATT).
 
 
-### 3.3 Diseño de la Placa de Circuito Impreso (PCB)
+#### Diseño de la Placa de Circuito Impreso (PCB)
 
 Tras establecer la posición de los componentes, se procedió a la creación de las pistas de cobre siguiendo el esquema de conexiones:
 
@@ -106,10 +70,8 @@ Tras establecer la posición de los componentes, se procedió a la creación de 
 </p>
 
 
-
-## 4. Integración
-
-### 4.1 Planteamiento y Preparación para la Fabricación del PCB
+## 3. Integración
+### Planteamiento y Preparación para la Fabricación del PCB
 
 Aunque la validación final del prototipo se realizó mediante cableado físico y prototipado rápido, se ha completado la ingeniería necesaria para su producción:
 
@@ -124,6 +86,61 @@ Aunque la validación final del prototipo se realizó mediante cableado físico 
 </p>
 
 
+## 4. Fabricación
+
+Materiales:
+* Filamentos PLA+ de 1.75mm con precisión de +- 0.02 mm
+
+Con los modelos stl, se puede proceder a la fabricación de la estructura con una impresora 3D utilizando los filamentos indicados. (Algunas piezas necesitaron ser limadas por errores comunes de impresión)
+
+### 4.1 Montaje
+
+Materiales:
+* Tornillos para las plantas.
+* Tornillos para las patas.
+* Tornillo para la caja.
+* Tornillos para el servo.
+* velcros
+
+Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante los tornillos especificados. En las imágenes posteriores se muestran las piezas del cuerpo con su correspondiente dispoisición.
+
+
+<p align="center">
+<img src="Imagenes/atras.png" width="300">
+<img src="Imagenes/delante.png" width="300">
+</p>
+
+- Se atornillan las 3 plantas con los laterales utilizando los tornillos ... .
+
+- La caja se atornilla con un tornillo ... y su tuerca correspondiente para asegurarla.
+
+
+<p align="center">
+<img src="Imagenes/frente.jpeg" width="200">
+<img src="Imagenes/ladeao.jpeg" width="200">
+<img src="Imagenes/atras.jpeg" width="200">
+</p>
+
+- Los motores van atornillados con los ... en la planta inferior, dejando uno de sus ejes sobresaliendo por el lateral para conectar los conjuntos de patas.
+
+- El servo se coloca en el espacio dispuesto para él en la parte frontal del robot.
+
+- El ultrasonidos central va dentro de su caja y tapa correspondiente [CajaUS](FreeCad_Stls/CajaUS.stl), y esta caja conectada al servo para que gire verticalmente.
+
+- Para terminar el cuerpo se colocan: la batería, el microcontrolador, la miniprotoboard el puente H y los 2 ultrasonidos laterales con velcros. Con esto es suficiente a su sujección y facilita mucho el montaje.
+
+
+[video montaje patas]
+
+Por último, arriba se incluye un videotutorial para el montaje de las patas, las cuales deben conectarse a los ejes de los motores que sobresalen del chasis.
+
+
+### 4.2 Circuito
+
+[alguien porfa ayuda]
+
+
+
 ## 5. Programación
 
 El código de Arduino se divide en 3 ficheros:
@@ -134,14 +151,17 @@ El código de Arduino se divide en 3 ficheros:
 - **Métodos del código principal:**
   - **follow_wall:** Se utiliza un control PD para el seguimiento de pared, empleando la distancia del sensor ultrasónico lateral como error respecto a una distancia de referencia.
   - **confirm_obstacle:** Se basa en el principio de detección diferencial: si hay detección en el plano inferior pero no en el superior, se identifica un obstáculo. Dado que estos no superan los 10cm, dos mediciones del sensor (desplazado verticalmente por el servo) permiten diferenciar una pared de un objeto.
-  - **avoid_obstacle:** [Lógica de evasión de obstáculos]
+  - **avoid_obstacle:** Esquive simple. Si gira 90º aprox., avanza hasta que deja de ver el obstáculo con el us lateral. Vuelve a girar 90º para continuar avanzando de manera normal. Durante su ejecución se sigue comprobando si hay obstáculos delante.
 
 ## 6. Pruebas
 [video]
 [video]
 
 ## 7. Resultados y conclusiones
-[Resultados del proyecto]
+- Se han presentado los numerosos errores, sobretodo con cosas inesperadas como elementos desgatados o rotos. A pesar de ello, hemos podido hacer que nuestro robot sea funcional y que complete los ejercicios propuestos cumplieando con los plazos y las limitaciones.
+
+- Este proyecto tiene mucho futuro sobretodo para fines educativos. La interacción con el usuario es amigable dado su diseño. Con los correctos ajustes y preparaciones, puede ser fácil de programar e incluso montar. Además, su transporte de cargas pequeñas puede resultar entretenido por un lado y educativo para aprender sobre la importancia de los pesos en la robótica móvil. Al implementar el mecanismo de Theo Jansen, también se aprendería sobre este y su utilidad.
 
 ## Referencias
 Kilic, M. (2024). Build a Walking Robot Theo Jansen Style 3D Printed Octopod [Proyecto de Hardware Open Source]. PCBWay Community. https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html
+N_O_A_H. (2020). *Case for HC-SR04 ultrasonic module distance sensor for Arduino Raspberry Pi* [Modelo 3D]. Cults3D. https://cults3d.com/en/3d-model/gadget/case-for-hc-sr04-ultrasonic-module-distance-sensor-for-arduino-raspberry-pi
