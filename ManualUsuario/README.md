@@ -35,6 +35,11 @@ El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interf
 <img src="Imagenes/IR_Remote_Control" width="600">
 </p>
 
+
+<p align="center">
+<img src="Imagenes/Remote_control" width="600">
+</p>
+
 ## 4. Preguntas Frecuentes
 
 - ¿Por qué el robot se mueve pero no avanza (se queda en el sitio)?
