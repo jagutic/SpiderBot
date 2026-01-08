@@ -34,7 +34,7 @@ El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interf
 <img src="Imagenes/Remote_control.png" width="300">
 </p>
 
-### 1. Control Manual (Modo Directo)
+### Control Manual (Modo Directo)
 
 Utilice los siguientes botones para desplazar al robot en tiempo real. Este modo permite un manejo preciso sobre el entorno.
 
@@ -47,6 +47,14 @@ Utilice los siguientes botones para desplazar al robot en tiempo real. Este modo
 - Botón adelantar: Giro sobre el eje central hacia la derecha.
 
 - Botón Parar: Detención inmediata de todos los motores.
+
+### Modos de Navegación Inteligente
+
+El robot cuenta con algoritmos de procesamiento de entorno activables mediante el teclado numérico:
+
+- Rastreador de Perímetro (Botón 1): El robot busca la pared más cercana y la sigue lateralmente hasta detectar un obstáculo frontal.
+
+- Exploración Libre (Botón 2): Desplazamiento continuo con evasión activa.
 
 ## 4. Preguntas Frecuentes
 
