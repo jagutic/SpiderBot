@@ -30,15 +30,23 @@ El Spider-Bot es un octópodo diseñado bajo los principios cinemáticos de Theo
 
 El SpiderBot se opera mediante un control remoto por infrarrojos (IR). La interfaz está dividida en funciones de Control Directo y Protocolos Autónomos.
 
-
 <p align="center">
-<img src="Imagenes/IR_Remote_Control.png" width="600">
+<img src="Imagenes/Remote_control.png" width="300">
 </p>
 
+### 1. Control Manual (Modo Directo)
 
-<p align="center">
-<img src="Imagenes/Remote_control.png" width="600">
-</p>
+Utilice los siguientes botones para desplazar al robot en tiempo real. Este modo permite un manejo preciso sobre el entorno.
+
+- VOL+: Desplazamiento frontal.
+
+- VOL-: Retroceso.
+
+- Botón rebobinar: Giro sobre el eje central hacia la izquierda.
+
+- Botón adelantar: Giro sobre el eje central hacia la derecha.
+
+- Botón Parar: Detención inmediata de todos los motores.
 
 ## 4. Preguntas Frecuentes
 
