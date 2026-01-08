@@ -44,7 +44,8 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos
 
 
 ### 2.2 Simulación
-[usu]
+La parte de la simulación se realizó para tener una referencia real antes de imprimir para confirmar que el movimiento era correcto.
+Inicialmente se hizo un modelo URDF, este modelo es lo más realista posible pero, como podemos ver en el robot, necesita de joints dobles para que se muevan las patas, y eso no se permite en el formato URDF, para crearlo he usado la herramienta de blender con la extensión de phobos. Debido al problema del URDF, la programación en la simulación es mas compleja ya que tenemos que usar una herramienta de pybullet llamada constrain, cuya función es juntar dos piezas como un joint, esto causa que las fuerzas que puedan aparecer en gráficas no sean realistas ya que estos constrains intentan siempre estar en el sitio pero como en URDF están colgando añaden mucha dificultad a los motores para girar, cuando en la realidad no es así. 
 
 ### 2.3 Diseño electrónico
 
