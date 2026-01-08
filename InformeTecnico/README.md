@@ -47,8 +47,11 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos
 La parte de la simulación se realizó para tener una referencia real antes de imprimir para confirmar que el movimiento era correcto.
 Inicialmente se hizo un modelo URDF, este modelo es lo más realista posible pero, como podemos ver en el robot, necesita de joints dobles para que se muevan las patas, y eso no se permite en el formato URDF, para crearlo he usado la herramienta de blender con la extensión de phobos. Debido al problema del URDF, la programación en la simulación es mas compleja ya que tenemos que usar una herramienta de pybullet llamada constrain, cuya función es juntar dos piezas como un joint, esto causa que las fuerzas que puedan aparecer en gráficas no sean realistas ya que estos constrains intentan siempre estar en el sitio pero como en URDF están colgando añaden mucha dificultad a los motores para girar, cuando en la realidad no es así.
 
-[![sim](Imagenes/sim.png)](https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAQ0JiPpnNPSoRYu0Z7_MFoAWkj1z3xnT09Al3eBEj2Tbc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=mgvvG1)
-
+<p align="center">
+  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAQ0JiPpnNPSoRYu0Z7_MFoAWkj1z3xnT09Al3eBEj2Tbc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=mgvvG1">
+    <img src="Imagenes/sim.png" width="600" alt=sim">
+  </a>
+</p>
 
 ### 2.3 Diseño electrónico
 
@@ -121,7 +124,7 @@ Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante
 
 <p align="center">
 <img src="Imagenes/frente.jpeg" width="200">
-<img src="Imagenes/ladeao.jpeg" width="200">
+<img src="Imagenes/ladeado.jpeg" width="200">
 <img src="Imagenes/atras.jpeg" width="200">
 </p>
 
@@ -133,8 +136,11 @@ Una vez obtenidas las piezas de la estructura, se procede al ensamblaje mediante
 
 - Para terminar el cuerpo se colocan: la batería, el microcontrolador, la miniprotoboard el puente H y los 2 ultrasonidos laterales con velcros. Con esto es suficiente a su sujección y facilita mucho el montaje.
 
-
-[![patas](Imagenes/patas.png)](https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAkpS834dYtR46muISWnDt4AQrMFmQSmGmuzW9HST6vcxA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gBbYqR)
+<p align="center">
+  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQAkpS834dYtR46muISWnDt4AQrMFmQSmGmuzW9HST6vcxA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gBbYqR">
+    <img src="Imagenes/patas.png" width="600" alt=patas">
+  </a>
+</p>
 
 Por último, arriba se incluye un videotutorial para el montaje de las patas, las cuales deben conectarse a los ejes de los motores que sobresalen del chasis.
 
@@ -160,10 +166,17 @@ El código de Arduino se divide en 3 ficheros:
 ## 6. Pruebas
 
 Prueba del caso 1, siguiendo la pared. LLeva carga encima.
-[![prueba1](Imagenes/prueba1.png)](https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQCe-WwKy5C2QJIU49QHiDK6AS2-BWRqhCDQ_IA38Tgm0co?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hneQIs)
-
 Prueba del caso 2, tocando las 4 paredes mientras esquiva obstáculos. No lleva carga.
-[![prueba2](Imagenes/prueba2.png)](https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQDGhoABG6wNQ4XgmfqWrPcEAZKKj-teWtL4Eo63Ohf5PM8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vWhUpM)
+
+
+<p align="center">
+  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQCe-WwKy5C2QJIU49QHiDK6AS2-BWRqhCDQ_IA38Tgm0co?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hneQIs">
+    <img src="Imagenes/prueba1.png" width="200" alt=p1">
+  </a>
+  <a href="https://urjc-my.sharepoint.com/:v:/g/personal/m_useros_2022_alumnos_urjc_es/IQDGhoABG6wNQ4XgmfqWrPcEAZKKj-teWtL4Eo63Ohf5PM8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vWhUpM">
+    <img src="Imagenes/prueba2.png" width="400" alt=p2">
+  </a>
+</p>
 
 
 ## 7. Resultados y conclusiones
