@@ -15,7 +15,7 @@
 
     Se nos pide hacer un robot capaz de moverse en un espacio reducido. Este debe transoportar una carga (250g) mientras esquiva obstáculos y llega a su objetivo lo antes podible. El robot debe tener obligatoriamente patas (8 en nuestro caso).
 
-    Nos hemos inspirado en inspirado en el diseño original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html). Lo hemos adaptado para que resuelva el problema propuesto. En el apartado [5. Fabricación](#5-fabricación) exponemos en detalle estos cambios.
+    Nos hemos inspirado en inspirado en el diseño original de **MERT KILIC** [Build a Walking Robot Theo Jansen Style](https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html). Lo hemos adaptado para que resuelva el problema propuesto. En el apartado [4. Fabricación](#4-fabricación) exponemos en detalle estos cambios.
   
 
 - 1.2 Descripción General del Proyecto:
@@ -23,11 +23,14 @@
     Una "araña" robótica con locomoción a través del mecanismo Jansen, diseñada para el transporte de cargas ligeras en un entorno con obstáculos y paredes.
     Estructura impresa en 3D, previamente modelada en freeCAD. Programado en aruino y con posibilidad de movimiento por control remoto.
 
-    Kit arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 [PCB], 1 control - receptor IR.
+    Kit arduino UNO, 2 motores de corriente continua, 3 sensores ultrasónicos, 1 microservo 9g, 1 miniprotoboard, 1 puente H, 1 control - receptor IR.
 
 
 ## 2. Diseño conceptual
-Hemos elegido el microcontrolador arduino UNO por nuestra previa experiencia con él.
+  
+Hemos elegido el **microcontrolador arduino UNO** por nuestra previa experiencia con él y facilidad de programación. Los 2 sensores ultrasónicos laterales sirven principalmente para el seguimiento de paredes, aunque se usan como ayuda extra al esquivar obstáculos también. El ultrasonidos central mide la distancia frontal y ayuda a diferenciar entre una pared y un obstáculo en el camino.
+
+El **control remoto**, que envía su señal gracias al receptor IR conectado al robot, nos permite cambiar de estados entre el robot para resolver los ejercicios propuestos. También disponemos de un botón de parada en caso de necesitarlo.
 
 Estéticamente, debido a sus 8 patos y estilo arácnido, nuestro proyecto está obviamente inspirado en el famoso superhéroe Spider-man, teniendo detalles y colores de este. Esto lo hace un robot más llamativo y amigable con el usuario.
 
@@ -35,7 +38,11 @@ Estéticamente, debido a sus 8 patos y estilo arácnido, nuestro proyecto está 
 
 ### 3.1 Diseño mecánico
 
-Hemos empleado la cinématica de este proyecto basada en el mecanismo de Theo Jansen, facilitandonos así el movimiento con solo dos motores (uno para cada set de patas).
+El **mecanismo de Theo Jansen** nos permite mover el robot con únicamente 2 motores. Este movimiento circular se transfiere desde cada motor a las 4 patas de cada lado. Podemos realizar moviemientos de traslación hacia delante y detrás y rotatoria sobre si mismo gracias al puente H, que permite programar los motores en arduino para que giren en un sentido o en otro. Aqui vemos un ejemplo de su funcionamiento.
+
+[video theo jansen]
+
+
 
 ### 3.2 Diseño electrónico
 
@@ -99,14 +106,14 @@ Aunque la validación final del prototipo se realizó mediante métodos de cable
 ## 5. Programación
 
 Hemos dividido el código arduino en 3 ficheros:
-- Control.h: Constantes y librerías necesarias para la implementación del control remoto. De esta forma, basta con importar este archivo para poder ejecutar diferentes acciones dependiendo del botón pulsado.
-- Spider.h: Clase que implementa las funcionalidades básicas del robot (move, turn, head_set_to, set_speed, get_dist). De esta forma tenemos el control del robot modulado y sus constantes (pines, umbrales) separadas del código principal).
-- Spider.ino: Código principal del robot. Usa los archivos anteriores para completar el problema propuesto. Problemas específicos como seguir la pared o comprobar si hay un obstáculo, se modulan mediante métodos (follow_wall, is_obstacle). Usando estas funciones y mediante una máquina de estados, somos capaces de resolver el ejercicio propuesto. Somos capaces de cambiar entre ejercicios usando el control remoto previamente mencionado (cambia la variable de estado). Hemos evitado en la medida de lo posible utilizar delays, con el fin de hacer el programa lo más reactivo posible.
+- [Control.h](Spider/Control.h): Constantes y librerías necesarias para la implementación del control remoto. De esta forma, basta con importar este archivo para poder ejecutar diferentes acciones dependiendo del botón pulsado.
+- [Spider.h](Spider/Spider.h): Clase que implementa las funcionalidades básicas del robot (move, turn, head_set_to, set_speed, get_dist). De esta forma tenemos el control del robot modulado y sus constantes (pines, umbrales) separadas del código principal).
+- [Spider.ino](Spider/Spider.ino): Código principal del robot. Usa los archivos anteriores para completar el problema propuesto. Problemas específicos como seguir la pared o comprobar si hay un obstáculo, se modulan mediante métodos (follow_wall, is_obstacle). Usando estas funciones y mediante una máquina de estados, somos capaces de resolver el ejercicio propuesto. Somos capaces de cambiar entre ejercicios usando el control remoto previamente mencionado (cambia la variable de estado). Hemos evitado en la medida de lo posible utilizar delays, con el fin de hacer el programa lo más reactivo posible.
 
 - Métodos del código principal:
-  - follow_wall: Utilizamos un PD para seguir la pared, usando la distancia recogida por el ultrasonidos lateral correspondiente como error comprandolo con una distancia arbitraria.
-  - confirm_obstacle: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
-  - avoid_obstacle: 
+  - **follow_wall**: Utilizamos un PD para seguir la pared, usando la distancia recogida por el ultrasonidos lateral correspondiente como error comprandolo con una distancia arbitraria.
+  - **confirm_obstacle**: Sigue el básico concepto de, si abajo veo algo pero arriba no, es un obstáculo. Esto se debe a que lo obstáculos nunca serán más altos que 10cm, por lo que con dos simples vistazos del ultrasonidos (movido verticalmente por el servo) podemos diferenciar una pared de un objeto obstáculo.
+  - **avoid_obstacle**: 
 
 ## 6. Pruebas y validación
 Simulación usu
