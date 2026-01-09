@@ -42,8 +42,7 @@ La integración de la electrónica es fundamental para la autonomía del robot.
 | :--- | :--- | :--- |
 | El robot no se mueve paralelo a la pared. | Sensor HC-SR04 desalineado o lectura errónea. | Limpiar sensor y recalibrar el código embebido. |
 | El robot excede el tiempo de 1 min en 1 m. | Batería LiPo baja o fricción excesiva en patas. | Cargar batería o lubricar articulaciones. |
-| No esquiva obstáculos en los 2 m². | Fallo en la lógica de evasión o sensor IR bloqueado. | Revisar conexiones del sensor y lógica de programación. |
-| El robot se apaga al colocar los 250g. | Sobrecarga en el SG90 o caída de tensión. | Verificar que el servo soporte el torque con la carga puesta. |
+| No esquiva obstáculos en los 2 m². | Fallo en la lógica de evasión o sensor de ultrasonidos bloqueado. | Revisar conexiones del sensor y lógica de programación. |
 
 ---
 
