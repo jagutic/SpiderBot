@@ -50,6 +50,8 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos
 
 La caja del ultrasonidos se ha cogido del sitio web público [Cults3D](https://cults3d.com/en/3d-model/gadget/case-for-hc-sr04-ultrasonic-module-distance-sensor-for-arduino-raspberry-pi).
 
+#### Planos
+Los planos de las piezas y el plano del ensamble final se encuentran en [Planos](InformeTecnico/Planos).
 
 ### 2.2 Simulación
 La parte de la simulación se realizó para tener una referencia real antes de imprimir para confirmar que el movimiento era correcto.
