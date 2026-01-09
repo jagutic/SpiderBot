@@ -3,6 +3,7 @@
 #include "Thread.h"
 
 // Constants
+const int ledPIN = 9;
 #define WALL_DIST 15
 #define WALL_DIST_RIGHT WALL_DIST + 5
 #define WALL_LONG_DIST WALL_DIST + 18
@@ -86,11 +87,6 @@ bool confirm_obstacle() {
       return true;
     }
     
-    // Get closer if it is not obstacle
-    // while (spider.get_dist_head() > WALL_DIST + 5){
-    //   spider.move(FORWARD);
-    //   check_control();
-    // }
     return false;
 }
 
@@ -129,7 +125,7 @@ void follow_wall(enum walls side) {
       } 
   }
   spider.move(FORWARD);
-  tiempo_espera = millis() + (turn_time * 5);
+  tiempo_espera = millis() + (turn_time * 3);
 }
 
 void avoid_obstacle(enum walls wall_side) {
@@ -147,7 +143,7 @@ void avoid_obstacle(enum walls wall_side) {
     check_control();
   }
 
-  delay(2000);
+  delay(1250);
 
   if (is_obstacle()) {
     spider.stop();
@@ -157,7 +153,7 @@ void avoid_obstacle(enum walls wall_side) {
     }
   }
   spider.move(FORWARD);
-  delay(500);
+  delay(1350);
 
   // Avanzamos un poco para salir
   if (wall_side == W_LEFT) {
@@ -181,7 +177,7 @@ void avoid_obstacle(enum walls wall_side) {
   }
 
   spider.turn(turn_dir);
-  delay(2000);
+  delay(1250);
 
   if (is_obstacle()) {
     spider.stop();
@@ -215,7 +211,7 @@ void turn(enum walls wall_side) {
   }
 
   // Timer
-  if (millis() - tiempo_inicio > 2000) {
+  if (millis() - tiempo_inicio > 1250) {
     spider.stop();
     state = FOLLOW_WALL;
     tiempo_inicio = 0;
@@ -253,7 +249,7 @@ void detect_wall() {
     }
     state = TURN;
   } else {
-    spider.turn(RIGHT);
+    spider.turn(LEFT);
   }
 }
 
@@ -325,6 +321,7 @@ void setup() {
   state = 1000;
   mode = IDLE;
   wall_side = W_FRONT;
+  pinMode(ledPIN , OUTPUT);  //definir pin como salida
 }
 
 
@@ -351,6 +348,9 @@ void loop() {
           spider.stop();
           state = AVOIDING;
         } else { // pared
+          digitalWrite(ledPIN , HIGH);
+          delay(1000);
+          digitalWrite(ledPIN , LOW);
           state = TURN;
         }
       }
@@ -364,34 +364,6 @@ void loop() {
     break;
 
   default:
-    // Serial.println(state);
-    // Serial.print("Head ");
-    // Serial.println(spider.get_dist_head());
     delay(100);
-    // Serial.print("Left ");
-    // Serial.println(spider.get_dist_left());
-    // delay(100);
-    // Serial.print("Right ");// if(state != CASE_2){
-  //   Serial.print("Head ");
-  //   Serial.println(spider.get_dist_head());
-  //   delay(50);
-  //   Serial.print("Left ");
-  //   Serial.println(spider.get_dist_left());
-  //   delay(50);
-  //   Serial.print("Right ");
-  //   Serial.println(spider.get_dist_right());
-  //   delay(1000);
-  // }
-    // Serial.println(spider.get_dist_right());
-    // delay(1000);
-    
-    // if (is_obstacle()) {
-    //   bool obstacle = confirm_obstacle();
-    //   if (obstacle == true) {
-    //     Serial.println("OBSTACULO");
-    //   } else {
-    //     Serial.println("PARED");
-    //   }
-    // }
   }
 }

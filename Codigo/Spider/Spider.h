@@ -24,8 +24,8 @@
 #define MIN_DISTANCE 2.0 // cm
 
 // CONSTANTS
-#define SPEED_MOVE 180
-#define SPEED_TURN 150
+#define SPEED_MOVE 200
+#define SPEED_TURN 255
 #define SPEED_TURN_FACTOR 0.9
 #define INIT_ANGLE 75
 
