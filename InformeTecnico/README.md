@@ -48,6 +48,8 @@ En la carpeta [FreeCad_stls](FreeCad_Stls) se encuentran disponibles los modelos
 - Se han modificado [LateralDer](FreeCad_Stls/Der.stl) y [LateralIzq](FreeCad_Stls/Izq.stl) para soportar un nivel adicional, la [BaseArriba](FreeCad_Stls/Arriba.stl), siguiendo el sistema de anclaje de los niveles inferiores.
 - Esta Base superior cumple dos funciones fundamentales: soportar la [Caja](FreeCad_Stls/Caja.stl) de transporte de carga y alojar el servo conectado al contenedor del sensor de ultrasonidos [CajaUS](FreeCad_Stls/CajaUS.stl).
 
+La caja del ultrasonidos se ha cogido del sitio web público [Cults3D](https://cults3d.com/en/3d-model/gadget/case-for-hc-sr04-ultrasonic-module-distance-sensor-for-arduino-raspberry-pi).
+
 
 ### 2.2 Simulación
 La parte de la simulación se realizó para tener una referencia real antes de imprimir para confirmar que el movimiento era correcto.
