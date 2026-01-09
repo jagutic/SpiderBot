@@ -170,9 +170,9 @@ Tras establecer la posición de los componentes, se procedió a la creación de 
 ## 5. Programación
 
 El código de Arduino se divide en 3 ficheros:
-- [Control.h](Spider/Control.h): Contiene constantes y librerías necesarias para la implementación del control remoto. Esto permite ejecutar diferentes acciones según el botón pulsado mediante la importación del archivo.
-- [Spider.h](Spider/Spider.h): Clase que implementa las funcionalidades básicas (move, turn, head_set_to, set_speed, get_dist). El control se encuentra modulado y las constantes (pines, umbrales) están separadas del flujo principal.
-- [Spider.ino](Spider/Spider.ino): Código principal. Utiliza los archivos anteriores para la resolución del problema. Funciones específicas como el seguimiento de pared o la comprobación de obstáculos se modulan mediante métodos (`follow_wall`, `is_obstacle`). A través de una máquina de estados se resuelven los ejercicios propuestos, permitiendo el cambio entre ellos mediante el control remoto. Se ha evitado el uso de `delays` para garantizar la máxima reactividad del programa.
+- [Control.h](Codigo/Spider/Control.h): Contiene constantes y librerías necesarias para la implementación del control remoto. Esto permite ejecutar diferentes acciones según el botón pulsado mediante la importación del archivo.
+- [Spider.h](Codigo/Spider/Spider.h): Clase que implementa las funcionalidades básicas (move, turn, head_set_to, set_speed, get_dist). El control se encuentra modulado y las constantes (pines, umbrales) están separadas del flujo principal.
+- [Spider.ino](Codigo/Spider/Spider.ino): Código principal. Utiliza los archivos anteriores para la resolución del problema. Funciones específicas como el seguimiento de pared o la comprobación de obstáculos se modulan mediante métodos (`follow_wall`, `is_obstacle`). A través de una máquina de estados se resuelven los ejercicios propuestos, permitiendo el cambio entre ellos mediante el control remoto. Se ha evitado el uso de `delays` para garantizar la máxima reactividad del programa.
 
 #### Métodos del código principal:
   - **follow_wall:** Se utiliza un control PD para el seguimiento de pared, empleando la distancia del sensor ultrasónico lateral como error respecto a una distancia de referencia.
