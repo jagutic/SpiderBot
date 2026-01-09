@@ -1,0 +1,3 @@
+Instantiated with filepath=None->None, scale=[0.0010000000474974513, 0.0010000000474974513, 0.0009999999310821295], mesh=<bpy_struct, Mesh("axe-main_PCBWay Community.002") at 0x799a35ded008>, meshname=axe-main_PCBWay Community.002, material=None, mesh_orientation=None, {}
+->trying export of <bpy_struct, Mesh("axe-main_PCBWay Community.002") at 0x799a35ded008> to /home/marcos/mekatrinkax/unnamed/meshes/dae/axe-main_PCBWay Community.002.dae
+->wrote dae to /home/marcos/mekatrinkax/unnamed/meshes/dae/axe-main_PCBWay Community.002.dae from bpy_types.Mesh

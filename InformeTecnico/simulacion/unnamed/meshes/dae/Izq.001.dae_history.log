@@ -1,0 +1,3 @@
+Instantiated with filepath=None->None, scale=[1.0, 1.0, 1.0], mesh=<bpy_struct, Mesh("Izq.001") at 0x799a3591f808>, meshname=Izq.001, material=None, mesh_orientation=None, {}
+->trying export of <bpy_struct, Mesh("Izq.001") at 0x799a3591f808> to /home/marcos/mekatrinkax/unnamed/meshes/dae/Izq.001.dae
+->wrote dae to /home/marcos/mekatrinkax/unnamed/meshes/dae/Izq.001.dae from bpy_types.Mesh

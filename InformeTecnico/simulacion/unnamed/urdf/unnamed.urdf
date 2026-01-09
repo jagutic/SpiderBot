@@ -1,0 +1,1331 @@
+<robot name="unnamed" version="1.0">
+  <joint name="Arriba_link_joint" type="fixed">
+    <origin rpy="-3.14159 -0.00000 0.00000" xyz="0.00000 -0.00000 0.00100"/>
+    <parent link="Caja_link"/>
+    <child link="Arriba_link"/>
+  </joint>
+  <joint name="Caja_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 0.00000" xyz="-0.00250 -0.00000 0.03850"/>
+    <parent link="Medio_link"/>
+    <child link="Caja_link"/>
+  </joint>
+  <joint name="Medio_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.03350"/>
+    <parent link="Base_link"/>
+    <child link="Medio_link"/>
+  </joint>
+  <joint name="axe-drive_PCBWay Community.001_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 1.57080" xyz="0.00000 0.00400 0.01140"/>
+    <parent link="axe-mtr_left.001_link"/>
+    <child link="axe-drive_PCBWay_Community.001_link"/>
+  </joint>
+  <joint name="axe-drive_PCBWay Community.002_link_joint" type="fixed">
+    <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00390 0.00000 0.01740"/>
+    <parent link="axe-drive_PCBWay_Community.001_link"/>
+    <child link="axe-drive_PCBWay_Community.002_link"/>
+  </joint>
+  <joint name="axe-drive_PCBWay Community.004_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 -0.00000" xyz="-0.00390 -0.00000 0.01740"/>
+    <parent link="axe-drive_PCBWay_Community.003_link"/>
+    <child link="axe-drive_PCBWay_Community.004_link"/>
+  </joint>
+  <joint name="axe-drive_PCBWay_Community.003_link_joint" type="fixed">
+    <origin rpy="3.14159 -0.00000 1.57080" xyz="-0.00000 0.00400 -0.01140"/>
+    <parent link="axe-mtr_left_link"/>
+    <child link="axe-drive_PCBWay_Community.003_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.001_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.04399 -0.01757 -0.01136"/>
+    <parent link="left_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.001_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.003_link_joint" type="fixed">
+    <origin rpy="0.00000 0.00000 0.00000" xyz="0.04201 -0.01757 -0.01136"/>
+    <parent link="left_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.003_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.004_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="0.01841 0.01833 -0.01246"/>
+    <parent link="left_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.004_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.005_link_joint" type="fixed">
+    <origin rpy="-0.00000 -0.00000 -3.14159" xyz="-0.02072 -0.01850 -0.01237"/>
+    <parent link="right_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.005_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.006_link_joint" type="fixed">
+    <origin rpy="-0.00000 -0.00000 -3.14159" xyz="0.01808 -0.01850 -0.01237"/>
+    <parent link="right_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.006_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community.007_link_joint" type="fixed">
+    <origin rpy="-0.00000 -0.00000 -3.14159" xyz="0.04168 0.01740 -0.01127"/>
+    <parent link="right_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.007_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay Community_link_joint" type="fixed">
+    <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.02039 0.01833 -0.01246"/>
+    <parent link="left_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community_link"/>
+  </joint>
+  <joint name="axe-main_PCBWay_Community.002_link_joint" type="fixed">
+    <origin rpy="-0.00000 -0.00000 -3.14159" xyz="-0.04432 0.01740 -0.01127"/>
+    <parent link="right_side_PCBWay_Community_link"/>
+    <child link="axe-main_PCBWay_Community.002_link"/>
+  </joint>
+  <joint name="axe-mtr_left.001_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 3.14159" xyz="-0.00132 0.00440 0.00053"/>
+    <parent link="right_side_PCBWay_Community_link"/>
+    <child link="axe-mtr_left.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="axe-mtr_left_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="1000.00000"/>
+    <origin rpy="0.00000 -0.00000 3.14159" xyz="-0.00099 -0.00457 0.00044"/>
+    <parent link="left_side_PCBWay_Community_link"/>
+    <child link="axe-mtr_left_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.001_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 -0.68167" xyz="-0.00003 0.00019 0.00561"/>
+    <parent link="axe-main_PCBWay_Community.005_link"/>
+    <child link="inks_1_PCBWay_Community.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.003_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="1000.00000"/>
+    <origin rpy="3.14159 -0.00000 -2.45992" xyz="-0.00003 0.00019 0.00561"/>
+    <parent link="axe-main_PCBWay_Community.004_link"/>
+    <child link="inks_1_PCBWay_Community.003_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.004_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.68168" xyz="0.00003 0.00019 0.00561"/>
+    <parent link="axe-main_PCBWay_Community_link"/>
+    <child link="inks_1_PCBWay_Community.004_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.005_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 -0.00000 -2.95933" xyz="0.00021 -0.00008 0.00567"/>
+    <parent link="axe-main_PCBWay_Community.003_link"/>
+    <child link="inks_1_PCBWay_Community.005_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.006_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 2.95933" xyz="-0.00019 0.00009 0.01292"/>
+    <parent link="inks_2_PCBWay_Community.006_link"/>
+    <child link="inks_1_PCBWay_Community.006_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.008_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 -0.00000 2.95933" xyz="-0.00021 -0.00000 0.00467"/>
+    <parent link="axe-main_PCBWay_Community.001_link"/>
+    <child link="inks_1_PCBWay_Community.008_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.009_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 -0.00000 2.95933" xyz="-0.00021 -0.00000 0.00467"/>
+    <parent link="axe-main_PCBWay_Community.007_link"/>
+    <child link="inks_1_PCBWay_Community.009_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.010_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -0.00000 2.22205" xyz="-0.00000 0.00000 0.00000"/>
+    <parent link="inks_1_PCBWay_Community.002_link"/>
+    <child link="inks_1_PCBWay_Community.010_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.011_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 2.68182" xyz="0.00549 -0.00000 0.00140"/>
+    <parent link="axe-drive_PCBWay_Community.001_link"/>
+    <child link="inks_1_PCBWay_Community.011_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay Community.012_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 -0.00000 -0.45977" xyz="0.00549 -0.00000 0.00140"/>
+    <parent link="axe-drive_PCBWay_Community.001_link"/>
+    <child link="inks_1_PCBWay_Community.012_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay_Community.002_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="1000.00000"/>
+    <origin rpy="-3.14159 -0.00000 -0.45977" xyz="0.00549 -0.00000 0.00140"/>
+    <parent link="axe-drive_PCBWay_Community.003_link"/>
+    <child link="inks_1_PCBWay_Community.002_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_1_PCBWay_Community.007_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 0.68167" xyz="0.00003 0.00019 0.00561"/>
+    <parent link="axe-main_PCBWay_Community.006_link"/>
+    <child link="inks_1_PCBWay_Community.007_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.002_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 -0.00000 -1.07338" xyz="-0.00003 -0.00011 -0.01965"/>
+    <parent link="axe-main_PCBWay_Community.004_link"/>
+    <child link="inks_2_PCBWay_Community.002_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.003_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 0.00000 -0.00000" xyz="-0.01011 0.00000 0.00300"/>
+    <parent link="axe-drive_PCBWay_Community.002_link"/>
+    <child link="inks_2_PCBWay_Community.003_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.004_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 -0.00000 0.00000" xyz="0.00002 0.00001 -0.00725"/>
+    <parent link="axe-main_PCBWay_Community.003_link"/>
+    <child link="inks_2_PCBWay_Community.004_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.005_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 -0.00000 -2.06821" xyz="-0.00003 -0.00011 -0.01965"/>
+    <parent link="axe-main_PCBWay_Community.005_link"/>
+    <child link="inks_2_PCBWay_Community.005_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.006_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 3.14159" xyz="0.00002 0.00001 -0.00725"/>
+    <parent link="axe-main_PCBWay_Community.002_link"/>
+    <child link="inks_2_PCBWay_Community.006_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.007_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 -3.14159" xyz="-0.01011 0.00000 0.00455"/>
+    <parent link="axe-drive_PCBWay_Community.004_link"/>
+    <child link="inks_2_PCBWay_Community.007_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.008_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 0.00000 2.06821" xyz="0.00003 -0.00011 -0.01890"/>
+    <parent link="axe-main_PCBWay_Community_link"/>
+    <child link="inks_2_PCBWay_Community.008_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.009_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="3.14159 -0.00000 0.00000" xyz="-0.00002 0.00001 -0.00725"/>
+    <parent link="axe-main_PCBWay_Community.001_link"/>
+    <child link="inks_2_PCBWay_Community.009_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.010_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 3.14159" xyz="-0.01011 0.00000 0.00455"/>
+    <parent link="axe-drive_PCBWay_Community.002_link"/>
+    <child link="inks_2_PCBWay_Community.010_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay Community.012_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 3.14159" xyz="-0.00002 0.00001 -0.00725"/>
+    <parent link="axe-main_PCBWay_Community.007_link"/>
+    <child link="inks_2_PCBWay_Community.012_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay_Community.001_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 0.00000 -0.00000" xyz="-0.01011 0.00000 0.00300"/>
+    <parent link="axe-drive_PCBWay_Community.004_link"/>
+    <child link="inks_2_PCBWay_Community.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="inks_2_PCBWay_Community.011_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 -0.00000 2.06821" xyz="0.00003 -0.00011 -0.01890"/>
+    <parent link="axe-main_PCBWay_Community.006_link"/>
+    <child link="inks_2_PCBWay_Community.011_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="left_side_PCBWay_Community_link_joint" type="fixed">
+    <origin rpy="1.57080 0.00000 0.00000" xyz="0.00099 0.05864 0.02357"/>
+    <parent link="Base_link"/>
+    <child link="left_side_PCBWay_Community_link"/>
+  </joint>
+  <joint name="leg_PCBWay Community.001_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="1000.00000"/>
+    <origin rpy="-0.00000 0.00000 1.51844" xyz="0.00021 0.07365 0.01349"/>
+    <parent link="inks_1_PCBWay_Community.002_link"/>
+    <child link="leg_PCBWay_Community.001_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.002_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 -0.00000 -1.52909" xyz="-0.00021 0.07365 0.01349"/>
+    <parent link="inks_1_PCBWay_Community.010_link"/>
+    <child link="leg_PCBWay_Community.002_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.004_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-0.00000 0.00000 1.51844" xyz="0.00021 0.07365 0.01349"/>
+    <parent link="inks_1_PCBWay_Community.012_link"/>
+    <child link="leg_PCBWay_Community.004_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.005_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 0.00000 1.23744" xyz="-0.00000 -0.07325 -0.01380"/>
+    <parent link="inks_2_PCBWay_Community.007_link"/>
+    <child link="leg_PCBWay_Community.005_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.006_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 0.00000 2.44863" xyz="0.05845 -0.04482 -0.01349"/>
+    <parent link="inks_1_PCBWay_Community.011_link"/>
+    <child link="leg_PCBWay_Community.006_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.007_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 1.90415" xyz="0.00000 0.07325 0.01225"/>
+    <parent link="inks_2_PCBWay_Community.003_link"/>
+    <child link="leg_PCBWay_Community.007_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay Community.008_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="-3.14159 -0.00000 1.23744" xyz="-0.00000 -0.07325 -0.01380"/>
+    <parent link="inks_2_PCBWay_Community.010_link"/>
+    <child link="leg_PCBWay_Community.008_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="leg_PCBWay_Community.003_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.00000" velocity="0.00000"/>
+    <origin rpy="0.00000 0.00000 1.90415" xyz="0.00000 0.07325 0.01225"/>
+    <parent link="inks_2_PCBWay_Community.001_link"/>
+    <child link="leg_PCBWay_Community.003_link"/>
+    <axis xyz="0.00000 0.00000 1.00000"/>
+  </joint>
+  <joint name="right_side_PCBWay Community_link_joint" type="fixed">
+    <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00132 -0.05873 0.02340"/>
+    <parent link="Base_link"/>
+    <child link="right_side_PCBWay_Community_link"/>
+  </joint>
+  <link name="Arriba_link">
+    <visual name="Arriba">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Arriba.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Base_link">
+    <collision name="Base_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Base.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00011" ixy="-0.00000" ixz="0.00000" iyy="0.00005" iyz="0.00000" izz="0.00016"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00001 -0.00000 0.00189"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="Base">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Base.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Caja_link">
+    <visual name="Caja">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Caja.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Medio_link">
+    <collision name="Medio_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Medio.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.02700" ixy="-0.00007" ixz="-0.00000" iyy="0.00935" iyz="-0.00023" izz="0.03584"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00213 -0.00002 0.00231"/>
+      <mass value="20.00000"/>
+    </inertial>
+    <visual name="Medio">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Medio.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-drive_PCBWay_Community.001_link">
+    <collision name="axe-drive_PCBWay Community.001_collision">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00170 0.00000 -0.00150"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-drive_PCBWay Community.001">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-drive_PCBWay_Community.002_link">
+    <collision name="axe-drive_PCBWay Community.002_collision">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00169 0.00000 -0.00105"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-drive_PCBWay Community.002">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-drive_PCBWay_Community.003_link">
+    <collision name="axe-drive_PCBWay Community.003_collision.000">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00170 0.00000 -0.00150"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-drive_PCBWay Community.003">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-drive_PCBWay_Community.004_link">
+    <collision name="axe-drive_PCBWay Community.004_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00169 0.00000 -0.00105"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-drive_PCBWay Community.004">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-drive_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.001_link">
+    <collision name="axe-main_PCBWay Community.001_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="-0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00262"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.001">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.002_link">
+    <collision name="axe-main_PCBWay Community.002_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.002.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="-0.00000" iyy="0.00000" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00262"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.002">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.002.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.003_link">
+    <collision name="axe-main_PCBWay Community.003_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.003.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="-0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00262"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.003">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.003.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.004_link">
+    <collision name="axe-main_PCBWay Community.004_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.004.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="0.00000" ixz="0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00277"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.004">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.004.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.005_link">
+    <collision name="axe-main_PCBWay Community.005_collision">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.005.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="0.00000" iyy="0.00000" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00277"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.005">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.005.dae" scale="0.00100 0.00100 0.00100"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.006_link">
+    <collision name="axe-main_PCBWay Community.006_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="0.00000" iyy="0.00000" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00277"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.006">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community.007_link">
+    <collision name="axe-main_PCBWay Community.007_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.007.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="0.00000" iyy="0.00000" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00262"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community.007">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.007.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-main_PCBWay_Community_link">
+    <collision name="axe-main_PCBWay Community_collision">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="0.00000" ixz="0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00277"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-main_PCBWay Community">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-main_PCBWay Community.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-mtr_left.001_link">
+    <collision name="axe-mtr_left.001_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-mtr_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00000" ixy="-0.00000" ixz="-0.00000" iyy="0.00000" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00055"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-mtr_left.001">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-mtr_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="axe-mtr_left_link">
+    <collision name="axe-mtr_left_collision">
+      <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-mtr_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00000" ixy="0.00000" ixz="-0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00055"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="axe-mtr_left">
+      <origin rpy="3.14159 -0.00000 -3.14159" xyz="-0.00000 -0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/axe-mtr_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.001_link">
+    <collision name="inks_1_PCBWay Community.001_collision.000.001">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00001" iyy="0.00002" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00022 0.02217 -0.00160"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.001">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.002_link">
+    <collision name="inks_1_PCBWay Community.002_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="-0.00003" iyy="0.00007" iyz="0.00000" izz="0.00005"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00015 0.05009 0.00301"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.002">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.003_link">
+    <collision name="inks_1_PCBWay Community.003_collision">
+      <origin rpy="3.14159 -0.00000 -1.77824" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="-0.00001" iyy="0.00002" iyz="0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.02174 0.00435 0.00160"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.003">
+      <origin rpy="3.14159 -0.00000 -1.77824" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.004_link">
+    <collision name="inks_1_PCBWay Community.004_collision">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="0.00001" iyy="0.00002" iyz="0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.02212 -0.00107"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.004">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.005_link">
+    <collision name="inks_1_PCBWay Community.005_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00019 -0.01066 -0.00087"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.005">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.006_link">
+    <collision name="inks_1_PCBWay Community.006_collision">
+      <origin rpy="3.14159 -0.00000 2.77707" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="-0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00398 -0.00989 0.00087"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.006">
+      <origin rpy="3.14159 -0.00000 2.77707" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.007_link">
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="-0.00001" iyy="0.00002" iyz="-0.00000" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.02212 -0.00107"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.007">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.007.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.008_link">
+    <collision name="inks_1_PCBWay Community.008_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.008.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="-0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.01050 -0.00095"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.008">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.008.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.009_link">
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.01050 -0.00095"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.009">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.009.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.010_link">
+    <collision name="inks_1_PCBWay Community.010_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.010.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00007" ixy="0.00000" ixz="0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 0.04978 0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.010">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.010.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.011_link">
+    <collision name="inks_1_PCBWay Community.011_collision">
+      <origin rpy="3.14159 0.00000 0.91954" xyz="-0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00007" ixy="-0.00000" ixz="-0.00000" iyy="0.00000" iyz="-0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.03959 -0.03017 -0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.011">
+      <origin rpy="3.14159 0.00000 0.91954" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_1_PCBWay_Community.012_link">
+    <collision name="inks_1_PCBWay Community.012_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.012.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="-0.00003" iyy="0.00007" iyz="0.00000" izz="0.00005"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00015 0.05009 0.00301"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_1_PCBWay Community.012">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_1_PCBWay Community.012.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.001_link">
+    <collision name="inks_2_PCBWay Community.001_collision">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.010.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00000" ixy="0.00000" ixz="-0.00000" iyy="0.00007" iyz="0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.04978 0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.001">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.010.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.002_link">
+    <collision name="inks_2_PCBWay Community.002_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="-0.00001" iyy="0.00002" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.01707 0.00596"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.002">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.003_link">
+    <inertial>
+      <inertia ixx="0.00000" ixy="0.00000" ixz="-0.00000" iyy="0.00007" iyz="0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.04978 0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.003_collision">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.004_link">
+    <collision name="inks_2_PCBWay Community.004_collision">
+      <origin rpy="3.14159 0.00000 -3.14159" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.012.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="-0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00567 0.00292"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.004">
+      <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.012.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.005_link">
+    <collision name="inks_2_PCBWay Community.005_collision">
+      <origin rpy="3.14159 -0.00000 -0.99484" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="-0.00000" ixz="0.00001" iyy="0.00002" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.01432 -0.00930 -0.00596"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.005">
+      <origin rpy="-3.14159 -0.00000 -0.99484" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.006_link">
+    <collision name="inks_2_PCBWay Community.006_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00567 -0.00292"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.006">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.007_link">
+    <collision name="inks_2_PCBWay Community.007_collision">
+      <origin rpy="3.14159 0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.016.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00000" ixy="-0.00000" ixz="-0.00000" iyy="0.00007" iyz="-0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.04978 -0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.007">
+      <origin rpy="3.14159 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.016.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.008_link">
+    <collision name="inks_2_PCBWay Community.008_collision">
+      <origin rpy="-3.14159 0.00000 0.99484" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.017.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00001" iyy="0.00002" iyz="-0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.01432 -0.00930 -0.00596"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.008">
+      <origin rpy="-3.14159 0.00000 0.99484" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.017.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.009_link">
+    <collision name="inks_2_PCBWay Community.009_collision">
+      <origin rpy="3.14159 0.00000 -3.14159" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.018.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="-0.00000" iyy="0.00001" iyz="-0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00567 0.00292"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.009">
+      <origin rpy="3.14159 -0.00000 -3.14159" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.018.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.010_link">
+    <collision name="inks_2_PCBWay Community.010_collision">
+      <origin rpy="-3.14159 -0.00000 0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00000" ixy="-0.00000" ixz="0.00000" iyy="0.00007" iyz="0.00000" izz="0.00007"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.04978 -0.00177"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.010">
+      <origin rpy="3.14159 0.00000 -0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.011_link">
+    <collision name="inks_2_PCBWay Community.011_collision">
+      <origin rpy="-3.14159 0.00000 0.99484" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="-0.00001" iyy="0.00002" iyz="0.00000" izz="0.00002"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.01432 -0.00930 -0.00596"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.011">
+      <origin rpy="-3.14159 0.00000 0.99484" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inks_2_PCBWay_Community.012_link">
+    <collision name="inks_2_PCBWay Community.012_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00002" ixy="-0.00000" ixz="0.00000" iyy="0.00001" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00567 -0.00292"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="inks_2_PCBWay Community.012">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.002"/>
+      <geometry>
+        <mesh filename="../meshes/dae/inks_2_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="left_side_PCBWay_Community_link">
+    <collision name="Izq_collision">
+      <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00000 0.01326 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Izq.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="0.00000" ixz="0.00000" iyy="0.00012" iyz="-0.00000" izz="0.00006"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00014 0.01454 -0.00005"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="Izq">
+      <origin rpy="-1.57080 0.00000 0.00000" xyz="0.00006 0.01326 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Izq.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.001_link">
+    <collision name="leg_PCBWay Community.001_collision">
+      <origin rpy="0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00001" iyy="0.00006" iyz="-0.00000" izz="0.00006"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00498 0.00224 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.001">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.001.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.002_link">
+    <collision name="leg_PCBWay Community.002_collision">
+      <origin rpy="0.00000 -0.00000 -0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00007" ixy="-0.00000" ixz="0.00000" iyy="0.00007" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00517 0.00207 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.002">
+      <origin rpy="0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.002.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.003_link">
+    <collision name="leg_PCBWay Community.003_collision">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.008.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="-0.00000" ixz="0.00002" iyy="0.00006" iyz="0.00001" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00517 0.00207 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.003">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.008.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.004_link">
+    <collision name="leg_PCBWay Community.004_collision">
+      <origin rpy="-0.00000 -0.00001 -0.00001" xyz="-0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00001" ixy="0.00000" ixz="0.00001" iyy="0.00006" iyz="-0.00000" izz="0.00006"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00498 0.00224 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.004">
+      <origin rpy="-0.00000 0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.003.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.005_link">
+    <collision name="leg_PCBWay Community.005_collision">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="0.00000" ixz="-0.00002" iyy="0.00006" iyz="0.00001" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00534 -0.00157 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.005">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.011.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.006_link">
+    <collision name="leg_PCBWay Community.006_collision">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="-0.00000 0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00007" ixy="-0.00000" ixz="0.00000" iyy="0.00007" iyz="0.00000" izz="0.00000"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00517 0.00207 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.006">
+      <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.004.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.007_link">
+    <collision name="leg_PCBWay Community.007_collision">
+      <origin rpy="-0.00000 -0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="-0.00000" ixz="-0.00002" iyy="0.00006" iyz="-0.00001" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00517 0.00207 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.007">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="-0.00000 0.00000 0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.005.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_PCBWay_Community.008_link">
+    <collision name="leg_PCBWay Community.008_collision">
+      <origin rpy="-0.00000 -0.00000 -0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="0.00000" ixz="0.00002" iyy="0.00006" iyz="-0.00001" izz="0.00001"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00534 -0.00157 -0.01413"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="leg_PCBWay Community.008">
+      <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/leg_PCBWay Community.006.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="right_side_PCBWay_Community_link">
+    <collision name="Der_collision">
+      <origin rpy="-1.57080 0.00000 3.14159" xyz="-0.00032 -0.01343 0.00009"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Der.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.00006" ixy="-0.00000" ixz="0.00000" iyy="0.00012" iyz="0.00000" izz="0.00006"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00229 -0.01470 0.00004"/>
+      <mass value="0.10000"/>
+    </inertial>
+    <visual name="Der">
+      <origin rpy="-1.57080 -0.00000 -3.14159" xyz="-0.00032 -0.01343 0.00009"/>
+      <material name="Material.004"/>
+      <geometry>
+        <mesh filename="../meshes/dae/Der.dae" scale="1.00000 1.00000 1.00000"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="Material.002">
+    <color rgba="0.80000 0.00000 0.00000 1.00000"/>
+  </material>
+  <material name="Material.004">
+    <color rgba="0.00000 0.00000 0.80000 1.00000"/>
+  </material>
+</robot>
