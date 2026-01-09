@@ -66,29 +66,6 @@ Para solventar esta restricción y lograr una simulación funcional, se ha segui
   </a>
 </p>
 
-### 2.3 Diseño electrónico
-
-Para el control del robot se ha diseñado un PCB personalizado que actúa como shield para el Arduino UNO. El diseño se ha realizado íntegramente en KiCad 9.0.6.
-
-- **Esquema Lógico:** Se ha implementado un sistema que interconecta el microcontrolador con un driver de motores TB6612FNG, permitiendo el control independiente de los dos motores DC del mecanismo Jansen.
-
-- **Gestión de Sensores:** El diseño incluye puertos dedicados para tres sensores de ultrasonidos (frontal, izquierdo y derecho) y un microservo para la detección de obstáculos.
-
-- **Alimentación:** El circuito integra una entrada de batería (V_BATT).
-
-
-#### Diseño de la Placa de Circuito Impreso (PCB)
-
-Tras establecer la posición de los componentes, se procedió a la creación de las pistas de cobre siguiendo el esquema de conexiones:
-
-- **Ruteado Manual:** Se han trazado todas las conexiones eléctricas utilizando pistas de cobre, priorizando la ausencia de cruces de señales y manteniendo ángulos de 45° para asegurar la integridad de la fabricación.
-
-- **Verificación DRC:** Se ha ejecutado el control de reglas de diseño (Design Rules Check) de KiCad, confirmando la inexistencia de cortocircuitos o proximidad excesiva entre pistas.
-
-<p align="center">
-<img src="Imagenes/esquema_pcb.png" width="600">
-</p>
-
 
 ## 3. Integración
 ### Planteamiento y Preparación para la Fabricación del PCB
@@ -166,8 +143,27 @@ Por último, arriba se incluye un videotutorial para el montaje de las patas, la
 
 
 ### 4.2 Circuito
-FRIZTING!!!!!
-[alguien porfa ayuda]
+
+Para el control del robot se ha diseñado un PCB personalizado que actúa como shield para el Arduino UNO. El diseño se ha realizado íntegramente en KiCad 9.0.6.
+
+- **Esquema Lógico:** Se ha implementado un sistema que interconecta el microcontrolador con un driver de motores TB6612FNG, permitiendo el control independiente de los dos motores DC del mecanismo Jansen.
+
+- **Gestión de Sensores:** El diseño incluye puertos dedicados para tres sensores de ultrasonidos (frontal, izquierdo y derecho) y un microservo para la detección de obstáculos.
+
+- **Alimentación:** El circuito integra una entrada de batería (V_BATT).
+
+
+#### Diseño de la Placa de Circuito Impreso (PCB)
+
+Tras establecer la posición de los componentes, se procedió a la creación de las pistas de cobre siguiendo el esquema de conexiones:
+
+- **Ruteado Manual:** Se han trazado todas las conexiones eléctricas utilizando pistas de cobre, priorizando la ausencia de cruces de señales y manteniendo ángulos de 45° para asegurar la integridad de la fabricación.
+
+- **Verificación DRC:** Se ha ejecutado el control de reglas de diseño (Design Rules Check) de KiCad, confirmando la inexistencia de cortocircuitos o proximidad excesiva entre pistas.
+
+<p align="center">
+<img src="Imagenes/esquema_pcb.png" width="600">
+</p>
 
 
 
