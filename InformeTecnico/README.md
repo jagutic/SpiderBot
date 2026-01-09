@@ -214,9 +214,17 @@ Se puede cambiar entre los diferentes casos con el control remoto. Todos se pued
 
 
 ## 7. Resultados y conclusiones
-- Se han presentado los numerosos errores, sobretodo con cosas inesperadas como elementos desgatados o rotos. A pesar de ello, hemos podido hacer que nuestro robot sea funcional y que complete los ejercicios propuestos cumplieando con los plazos y las limitaciones.
+Durante el desarrollo de este proyecto, nos hemos enfrentado a diversos retos técnicos, especialmente relacionados con errores de montaje y el desgaste o rotura de componentes físicos. A pesar de estos contratiempos, el equipo logró adaptar el diseño y la mecánica para que el robot fuera totalmente funcional, cumpliendo con los objetivos y plazos establecidos.
 
-- Este proyecto tiene mucho futuro sobretodo para fines educativos. La interacción con el usuario es amigable dado su diseño. Con los correctos ajustes y preparaciones, puede ser fácil de programar e incluso montar. Además, su transporte de cargas pequeñas puede resultar entretenido por un lado y educativo para aprender sobre la importancia de los pesos en la robótica móvil. Al implementar el mecanismo de Theo Jansen, también se aprendería sobre este y su utilidad.
+Este proyecto destaca por su potencial educativo:
+
+- Diseño y Montaje: Gracias a una estructura amigable e intuitiva, el robot es ideal para aprender sobre robótica móvil y el ensamblaje de sistemas complejos.
+
+- Cinemática: La implementación del mecanismo de Theo Jansen permite estudiar una forma de locomoción eficiente y distinta a la tracción por ruedas tradicional.
+
+- Dinámica de Pesos: La capacidad de transportar pequeñas cargas no solo es una funcionalidad práctica, sino que sirve para entender de forma real cómo influye la distribución del peso en la estabilidad y el consumo de los motores.
+
+Con los ajustes adecuados, este prototipo se consolida como una herramienta didáctica muy completa para introducirse tanto en la programación como en el diseño de mecanismos.
 
 ## Referencias
 Kilic, M. (2024). Build a Walking Robot Theo Jansen Style 3D Printed Octopod [Proyecto de Hardware Open Source]. PCBWay Community. https://www.pcbway.com/project/shareproject/Build_a_Walking_Robot_Theo_Jansen_Style_3D_Printed_Octopod_41bd8bdb.html
