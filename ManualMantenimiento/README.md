@@ -1,4 +1,4 @@
-# Manual de Mantenimiento: Robot con Patas (Proyecto Mecatrónica)
+# Manual de Mantenimiento: Spiderbot
 
 Este manual describe los procedimientos necesarios para garantizar la operatividad y estabilidad del robot SpiderBot.
 
